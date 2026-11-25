@@ -3,7 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Gift Moutcheu Portfolio</title>
+<title>Gift Moutcheu</title>
+<script>try{const t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(e){}</script>
+<script>try{if(localStorage.getItem('lang')==='fr')document.documentElement.lang='fr'}catch(e){}window.T=s=>document.documentElement.lang==='fr'&&window.FR&&window.FR[s]||s</script>
 <meta name="description" content="Gift Anderson MOUTCHEU, software engineer building tools for quantum computing. M.Eng. student at IMT Atlantique.">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23121214'/%3E%3Cellipse cx='32' cy='32' rx='23' ry='7.5' fill='none' stroke='%2386817A' stroke-width='2' stroke-dasharray='3 3.5'/%3E%3Cpath d='M50 19A21 21 0 1 0 53 34H33' fill='none' stroke='%23FBF5E9' stroke-width='5' stroke-linecap='round'/%3E%3Ccircle cx='33' cy='34' r='5' fill='%23F5B82E'/%3E%3C/svg%3E">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -16,7 +18,7 @@
    COLOUR cryostat: graphite #121214, refrigerator gold #D9A441 (#9A6A12 for text on white), cryogenic blue #8FD3FF
    TYPE Space Grotesk 700 for display, Inter for text
    LAYOUT laptop: title band over a full-width circuit, then full-width rows; phone: title, circuit, rows stacked */
-:root{color-scheme:light dark;--bg:light-dark(#ffffff,#0d0d0f);--ink:light-dark(#121214,#f2efe8);--soft:light-dark(#5b5a57,#a9a7a1);--line:light-dark(#e6e2d9,#2a2a2e);--field:#121214;--fink:#F5B82E;--ice:#8FD3FF;--gt:#F5B82E;--chip:light-dark(#f6f4ef,#18181b);--goldbg:light-dark(#FFF3D3,#2E2512)}
+:root{color-scheme:light dark;--bg:light-dark(#ffffff,#0d0d0f);--ink:light-dark(#121214,#E2DED6);--soft:light-dark(#5b5a57,#a9a7a1);--line:light-dark(#e6e2d9,#2a2a2e);--field:#121214;--fink:#F5B82E;--ice:#8FD3FF;--gt:#F5B82E;--chip:light-dark(#f6f4ef,#18181b);--goldbg:light-dark(#FFF3D3,#2E2512)}
 :root[data-theme=light]{color-scheme:light}
 :root[data-theme=dark]{color-scheme:dark}
 *{box-sizing:border-box;min-width:0}
@@ -44,23 +46,10 @@ nav[aria-label=Sections] .links a.on{background:var(--ink);color:var(--bg)}
 nav .links{display:flex;gap:4px;overflow-x:auto;margin-left:auto;scrollbar-width:none}
 nav .links a{flex:none;text-decoration:none;font-size:15px;padding:10px 12px;border-radius:8px;color:var(--soft)}
 nav .links a:hover,nav .links a:focus-visible{color:var(--ink);background:var(--chip)}
-.hero{--field:light-dark(#FBF5E9,#121214);background:var(--field);color:light-dark(#121214,#f2efe8);border-bottom:1px solid var(--line)}
-.fig{color:#86817A}
+.hero{--field:light-dark(#FBF5E9,#121214);background:var(--field);color:light-dark(#121214,#E2DED6);border-bottom:1px solid var(--line)}
 .hero .btn.solid,.hero .btn:not(.solid):hover{color:#121214}
-.hero .name{text-align:center;margin-bottom:clamp(8px,1.5vw,20px)}
-.hero .top{display:flex;flex-direction:column;justify-content:flex-start;align-items:stretch;gap:clamp(24px,4vw,56px);margin-top:clamp(1.5rem,3vw,2.5rem);margin-bottom:2.5rem}
-.hero .top>div{display:flex;flex-direction:column}
-.hero .top>div:first-child{align-items:flex-start;align-self:flex-start;text-align:left;flex:none;max-width:40em}
-.hero .top>div:last-child{align-items:flex-end;text-align:right;flex:0 1 auto}
-.hero .lead{margin-top:0;max-width:40em}
-@media(max-width:900px){.hero .top{flex-direction:column;align-items:stretch}.hero .top>div:last-child{align-items:flex-start;text-align:left}.hero .top>div:last-child .btns{justify-content:flex-start}}
-.hero .open{display:inline-flex;flex-wrap:nowrap;align-items:center;gap:10px;max-width:100%;padding:8px 18px;border-radius:999px;background:var(--goldbg);border:1px solid #F5B82E;text-align:left}
-.hero .open p{font-size:15px}
-.hero .open .dot{background:#F5B82E;animation:ping 2s ease-out infinite}
 @keyframes ping{0%{box-shadow:0 0 0 0 rgba(245,184,46,.7)}70%,100%{box-shadow:0 0 0 9px rgba(245,184,46,0)}}
 .hero .btns{justify-content:flex-end;margin-top:18px}
-@media(max-width:600px){.hero .open{border-radius:16px}}
-@media(prefers-reduced-motion:reduce){.hero .open .dot{animation:none}}
 .hero a:focus-visible,.lab a:focus-visible,.contact a:focus-visible,.contact button:focus-visible{outline-color:#F5B82E}
 .lead{font-size:clamp(18px,1.8vw,21px);max-width:34em;margin-top:18px}
 .open{display:flex;flex-wrap:wrap;gap:10px;align-items:center;font-weight:600}
@@ -80,9 +69,6 @@ nav .links a:hover,nav .links a:focus-visible{color:var(--ink);background:var(--
 .hero .btns .btn:nth-child(3){animation-delay:.16s}
 .hero .btns .btn:nth-child(4){animation-delay:.24s}
 .btn:focus-visible,button:focus-visible,a:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
-.fig{position:relative;height:clamp(250px,30vw,340px);margin-top:clamp(24px,3vw,40px)}
-.fig>svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
-.cap{font-size:14px;margin-top:32px;max-width:none;width:100%;color:#A39E94}
 .sec-head{display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;margin-bottom:clamp(28px,3.5vw,44px);width:100%}
 .sec-head h2{width:100%}
 .sec-head p{color:var(--soft);font-size:17px;line-height:1.4;max-width:40em}
@@ -119,8 +105,8 @@ nav .links a:hover,nav .links a:focus-visible{color:var(--ink);background:var(--
 .sk-n{color:var(--soft);font-size:14px;margin-top:4px}
 .sk .tags{margin-top:16px}
 .sk .tags span{background:var(--bg)}
-.sk .tags span.core{background:var(--ink);color:var(--bg);font-weight:600}
-.sk .tags span.core:hover{background:var(--goldbg);color:var(--ink)}
+.sk .tags span,.proj .tags span{display:inline-flex;align-items:center;gap:6px}
+.ti{width:14px;height:14px;flex:none}
 .sk.hot{background:var(--goldbg);color:var(--ink);border-color:#F5B82E}
 .sk.hot .sk-n{color:var(--soft)}
 .more{background:var(--chip);border-top:1px solid var(--line)}
@@ -148,9 +134,6 @@ nav .links a:hover,nav .links a:focus-visible{color:var(--ink);background:var(--
 @media(max-width:900px){.extra{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.extra .box:first-child{grid-column:1/-1}}
 @media(max-width:600px){.extra{grid-template-columns:minmax(0,1fr)}}
 .sk.hot .tags span{background:color-mix(in srgb,var(--bg) 70%,transparent);color:var(--ink)}
-.legend{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:16px;font-size:14px;color:var(--soft)}
-.legend i{display:inline-block;width:14px;height:14px;border-radius:999px;vertical-align:-2px;margin-right:6px;background:var(--ink)}
-.legend i.o{background:var(--chip);border:1px solid var(--line)}
 @media(max-width:900px){.skills{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:600px){.skills{grid-template-columns:minmax(0,1fr)}}
 @media(prefers-reduced-motion:reduce){.sk,.sk:hover{transition:none;transform:none}}
@@ -165,30 +148,16 @@ nav .links a:hover,nav .links a:focus-visible{color:var(--ink);background:var(--
 .clist a:hover span:first-child,.clist button:hover span:first-child{text-decoration:underline}
 .contact .btn{border-color:#121214}
 .contact .btn.solid{background:#121214;color:#ffffff;border-color:#121214}
-.site{--ink:#121214;--soft:rgba(18,18,20,.72);--line:rgba(18,18,20,.18);--fink:#F5B82E;--goldbg:#FFF3D3;background:#FBF5E9;color:#121214;border-top:1px solid rgba(18,18,20,.12);padding:28px max(5vw,16px,env(safe-area-inset-right,0px)) calc(20px + env(safe-area-inset-bottom,0px)) max(5vw,16px,env(safe-area-inset-left,0px))}
-.wire{position:relative;height:2px;background:linear-gradient(90deg,#86817A 0,#86817A 88%,transparent);margin:10px 0 30px}
-.wire span{position:absolute;top:-9px;width:20px;height:20px;border-radius:4px;background:var(--fink)}
-.wire span:nth-child(1){left:14%}
-.wire span:nth-child(2){left:46%}
-.wire span:nth-child(3){left:78%;background:none;border:2px dashed var(--fink)}
-.fgrid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr) minmax(0,1fr);gap:28px;align-items:start}
 .fname{font-family:"Space Grotesk",sans-serif;font-weight:700;font-size:22px;letter-spacing:-.02em}
-.ftag{color:var(--soft);font-size:15px;margin-top:6px;max-width:26em}
-.fopen{display:inline-flex;gap:8px;align-items:center;margin-top:14px;font-size:14px;font-weight:600;background:var(--goldbg);border:1px solid var(--fink);border-radius:999px;padding:6px 12px}
-.fopen .dot{background:var(--fink)}
-.site nav{position:static;background:none;backdrop-filter:none;border:0;padding:0;z-index:auto}
-.fh{font-size:13px;font-weight:600;color:var(--soft);margin-bottom:10px}
 .flinks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2px 16px}
 .flinks a{display:inline-flex;align-items:center;min-height:36px;text-decoration:none;color:var(--ink);font-size:15px;background:linear-gradient(var(--fink),var(--fink)) left 85%/0 2px no-repeat;transition:background-size .25s ease;width:max-content}
 .flinks a:hover{background-size:100% 2px}
 .fbottom{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px 20px;margin-top:28px;padding-top:16px;border-top:1px solid var(--line);font-size:13px;color:var(--soft)}
 a.top{display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:6px 14px;border-radius:999px;border:1px solid var(--line);text-decoration:none;color:var(--ink);font-weight:600;transition:border-color .2s,background .2s,transform .2s}
 a.top:hover{border-color:var(--fink);background:var(--goldbg);transform:translateY(-2px)}
-@media(max-width:800px){.fgrid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.fgrid>div:first-child{grid-column:1/-1}}
-@media(max-width:480px){.fgrid{grid-template-columns:minmax(0,1fr)}}
 @media(prefers-reduced-motion:reduce){.flinks a,a.top{transition:none}a.top:hover{transform:none}}
 #toast{font-size:14px;min-height:1.4em;margin-top:8px}
-.lab{--lb:light-dark(#121214,#141417);--lt:#f2efe8;--lm:#F5B82E;--ls:#a9a7a1;background:var(--lb);color:var(--lt)}
+.lab{--lb:light-dark(#121214,#141417);--lt:light-dark(#f2efe8,#E2DED6);--lm:#F5B82E;--ls:#a9a7a1;background:var(--lb);color:var(--lt)}
 .lab .sec-head p{color:var(--ls)}
 .lab-top{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:clamp(28px,4vw,56px);align-items:center}
 .lab .meta{color:var(--ls)}
@@ -200,13 +169,6 @@ a.top:hover{border-color:var(--fink);background:var(--goldbg);transform:translat
 .lab h2{font-size:clamp(20px,2vw,24px);color:var(--ls);font-weight:500}
 .scope{background:color-mix(in srgb,var(--lm) 7%,transparent);border:1px solid color-mix(in srgb,var(--lm) 30%,transparent);border-radius:16px;padding:16px 16px 12px}
 .scope svg{display:block;width:100%;height:auto;color:var(--lt)}
-.keys{list-style:none;margin:12px 0 0;padding:0;display:grid;gap:8px;font-size:14px;color:var(--ls)}
-.keys li{display:grid;grid-template-columns:22px minmax(0,1fr);gap:8px;align-items:start}
-.keys i{display:block;width:16px;height:16px;margin-top:3px;border-radius:4px;background:var(--lt)}
-.keys i.p{background:none;border:2px dashed var(--lm)}
-.keys i.m{background:var(--ice)}
-.keys em{font-family:Georgia,"Times New Roman",serif;font-size:1.1em}
-.keys sub{font-size:.75em;line-height:0}
 .pipe{list-style:none;margin:clamp(36px,4vw,56px) 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;position:relative}
 .pipe::before{content:"";position:absolute;top:11px;left:12px;right:12px;height:2px;background:linear-gradient(90deg,var(--lm),color-mix(in srgb,var(--lm) 25%,transparent))}
 .pipe li{position:relative;padding-top:38px}
@@ -218,38 +180,13 @@ a.top:hover{border-color:var(--fink);background:var(--goldbg);transform:translat
 .pipe p{color:var(--ls);font-size:15px;margin-top:8px}
 .metrics{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
 .metrics span{font-size:13px;border:1px solid color-mix(in srgb,var(--lm) 45%,transparent);color:var(--lm);padding:3px 10px;border-radius:999px;white-space:nowrap}
-.next{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:32px;padding-top:20px;border-top:1px solid color-mix(in srgb,var(--lt) 18%,transparent);color:var(--ls);font-size:15px}
-.next b{color:var(--lt)}
-.persp{margin-top:32px;padding:16px 18px;border:1px dashed color-mix(in srgb,var(--lt) 30%,transparent);border-radius:14px}
-.persp>p{color:var(--ls);font-size:15px}
-.persp>p b{color:var(--lt)}
-.persp .metrics span{white-space:normal;border-style:dashed;color:var(--ls)}
 @media(max-width:900px){.lab-top{grid-template-columns:minmax(0,1fr)}}
 @media(max-width:600px){.pipe{grid-template-columns:minmax(0,1fr);gap:0}.pipe::before{top:12px;bottom:12px;left:11px;right:auto;width:2px;height:auto;background:color-mix(in srgb,var(--lm) 50%,transparent)}.pipe li{padding:0 0 24px 40px}}
 @media(prefers-reduced-motion:reduce){.lab .status .dot{animation:none}}
-.lab-mid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:16px;margin-top:clamp(28px,3vw,40px)}
-.code{margin:0;background:#050605;border:1px solid color-mix(in srgb,var(--lm) 25%,transparent);border-radius:16px;overflow:hidden}
-.code figcaption{font-size:13px;color:var(--ls);padding:10px 16px;border-bottom:1px solid color-mix(in srgb,var(--lm) 18%,transparent)}
-.code pre{margin:0;padding:14px 0;overflow-x:auto;font:14px/1.75 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:#d9e2dd}
-.code .ln{display:block;padding:0 16px;white-space:pre}
-.code .ln b{display:inline-block;width:2.4em;color:#5f6b65;font-weight:400;user-select:none}
-.code .hl{background:color-mix(in srgb,#F5B82E 16%,transparent);box-shadow:inset 3px 0 0 #F5B82E}
-.code .c{color:#7f8c85}
-.code .k{color:#F5B82E}
-.rq{display:grid;gap:16px;align-content:start}
-.rqc{background:color-mix(in srgb,var(--lm) 7%,transparent);border:1px solid color-mix(in srgb,var(--lm) 30%,transparent);border-radius:16px;padding:18px 20px}
-.rqc .lbl{font-size:13px;color:var(--lm);font-weight:600}
-.rqc p{margin-top:6px;color:var(--lt);font-size:16px}
-.rqc p.sm{color:var(--ls);font-size:14px}
-.er{display:flex;align-items:center;gap:12px;font-family:"Space Grotesk",sans-serif;font-size:clamp(24px,2.6vw,30px);font-weight:700;color:var(--lt);margin-top:8px;white-space:nowrap}
-.frac{display:inline-flex;flex-direction:column;text-align:center;font-size:.62em;line-height:1.25}
-.frac span:first-child{border-bottom:2px solid currentColor;padding-bottom:2px}
-.frac sub{font-size:.7em;font-weight:500}
 .refs{list-style:none;padding:0;margin:20px 0 0;display:grid;gap:6px;font-size:14px;color:var(--ls)}
 .refs a{color:var(--lt)}
-@media(max-width:900px){.lab-mid{grid-template-columns:minmax(0,1fr)}}
 .exp{background:var(--chip)}
-.cols{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:clamp(32px,4vw,56px)}
+.cols{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,4vw,56px)}
 .rail{position:relative;list-style:none;margin:0;padding:0;display:grid;gap:16px}
 .rail::before{content:"";position:absolute;left:39px;top:20px;bottom:20px;width:2px;background:var(--ink)}
 .rail li{position:relative;display:grid;grid-template-columns:80px minmax(0,1fr);gap:18px;align-items:start}
@@ -258,7 +195,7 @@ a.top:hover{border-color:var(--fink);background:var(--goldbg);transform:translat
 .card{background:var(--bg);border-radius:14px;padding:18px 20px;border:1px solid var(--line);transition:transform .2s,box-shadow .2s}
 .card:hover{transform:translateX(4px);box-shadow:0 6px 20px color-mix(in srgb,var(--ink) 10%,transparent)}
 .org{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:14px;font-weight:600;margin-bottom:6px}
-.org .pill{background:var(--goldbg);color:var(--ink);border:1px solid #F5B82E;padding:2px 10px;border-radius:999px;font-size:12px;white-space:nowrap}
+.org .pill{margin-left:auto;background:var(--goldbg);color:var(--ink);border:1px solid #F5B82E;padding:2px 10px;border-radius:999px;font-size:12px;white-space:nowrap}
 .card p{color:var(--soft);margin-top:8px;font-size:15px}
 .card .tags{margin-top:12px}
 .card .tags span{background:var(--chip)}
@@ -270,38 +207,17 @@ a.top:hover{border-color:var(--fink);background:var(--goldbg);transform:translat
 @media(max-width:900px){.hero .top,.sec-head,.research,.contact .grid{grid-template-columns:minmax(0,1fr)}.proj{grid-template-columns:minmax(0,1fr) minmax(0,1.4fr)}.proj .fact{grid-column:1/-1;display:flex;gap:16px;align-items:baseline}.proj .fact p{margin:0}}
 @media(max-width:600px){nav .me{display:none}nav .links{margin-left:0}.proj,.two{grid-template-columns:minmax(0,1fr);gap:16px}.tl li,.steps li{grid-template-columns:minmax(0,1fr);gap:4px}.fig{height:230px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.btn:hover,.btn:active{transform:none;transition:none}.hero .btns .btn{animation:none}}
-.hero .btn{border-color:light-dark(#121214,#f2efe8);color:light-dark(#121214,#f2efe8);background:transparent}
-.hero .btn.solid{background:light-dark(#121214,#f2efe8);color:light-dark(#FBF5E9,#121214)}
-.hero .btn:not(.solid):hover{background:light-dark(#121214,#f2efe8);color:light-dark(#FBF5E9,#121214)}
+.hero .btn{border-color:light-dark(#121214,#E2DED6);color:light-dark(#121214,#E2DED6);background:transparent}
+.hero .btn.solid{background:light-dark(#121214,#E2DED6);color:light-dark(#FBF5E9,#121214)}
+.hero .btn:not(.solid):hover{background:light-dark(#121214,#E2DED6);color:light-dark(#FBF5E9,#121214)}
 .hero .btn.solid:hover{background:light-dark(#34343a,#ffffff)}
 .hero .btn:hover{box-shadow:0 10px 22px -10px rgba(18,18,20,.45)}
-.about{position:relative;display:grid;grid-template-columns:104px minmax(0,1fr);gap:24px;align-items:center;background:light-dark(rgba(255,255,255,.78),rgba(255,255,255,.04));border:1px solid var(--line);border-radius:22px;padding:24px 28px;box-shadow:0 18px 40px -26px rgba(18,18,20,.45);text-align:left;overflow:hidden}
-.about::after{content:"";position:absolute;right:-60px;top:-60px;width:180px;height:180px;border-radius:50%;background:radial-gradient(circle,color-mix(in srgb,#F5B82E 22%,transparent),transparent 70%);pointer-events:none}
 .bloch{width:104px;height:104px;color:#86817A;overflow:visible}
-.about{grid-template-columns:auto minmax(0,1fr) !important}
-.about-l{display:flex;flex-direction:column;align-items:center;gap:12px}
-.about-l .about-h{margin:0;white-space:nowrap}
-@media(max-width:600px){.about{grid-template-columns:minmax(0,1fr) !important}.about-l{flex-direction:row;justify-content:flex-start;gap:16px}}
 .bloch text{font:italic 11px Georgia,"Times New Roman",serif;fill:#86817A}
 .bloch .vec{transform-origin:60px 60px;transform-box:view-box;animation:precess 9s ease-in-out infinite}
 @keyframes precess{0%,100%{transform:rotate(0deg)}50%{transform:rotate(-70deg)}}
-:root[data-theme=dark] .bloch .vec line,:root[data-theme=dark] .bloch>circle:last-of-type{stroke:#f2efe8;fill:#f2efe8}
-.about-h{font:italic 700 34px/1 "STIX Two Text","Cambria Math","Times New Roman",Georgia,serif;letter-spacing:0;margin-bottom:10px;color:transparent;background:linear-gradient(100deg,#C98A12 0%,#F5B82E 40%,#FFD76A 60%,#E0A21E 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;border:0;padding:0 .08em;border-radius:0;box-shadow:none}
-.about-h span{font-style:normal;color:inherit;opacity:.7;font-weight:400;font-size:1.08em}
-.about-facts{list-style:none;margin:16px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
-.about-facts li{font-size:13px;font-weight:600;padding:5px 12px;border-radius:999px;border:1px solid var(--line);background:var(--chip);white-space:nowrap}
 @media(prefers-reduced-motion:reduce){.bloch .vec{animation:none}}
-@media(max-width:600px){.about{grid-template-columns:minmax(0,1fr)}.bloch{width:72px;height:72px}}
-.about .lead{font-family:"Space Grotesk",Inter,sans-serif;font-weight:500;font-size:clamp(19px,1.9vw,23px);line-height:1.45;margin:0}
-.about .lead strong{font-weight:700;background:linear-gradient(transparent 62%,var(--goldbg) 62%)}
-.about{grid-template-columns:minmax(0,1fr) auto !important;grid-template-areas:"h h" "t b" "f .";row-gap:14px;align-items:center}
-.about-l{display:contents !important}
-.about-l .about-h{grid-area:h;justify-self:start;margin:0}
-.about .bloch{grid-area:b;align-self:center}
-.about>div:last-child{display:contents}
-.about .lead{grid-area:t;align-self:center}
 @keyframes collapse{0%{opacity:0;filter:blur(12px);letter-spacing:.14em}60%{opacity:1}100%{opacity:1;filter:blur(0);letter-spacing:-.02em}}
-@keyframes qpulse{0%,100%{text-shadow:0 0 0 rgba(245,184,46,0)}50%{text-shadow:0 0 28px rgba(245,184,46,.45),0 0 60px rgba(245,184,46,.18)}}
 .hero .name{animation:collapse 1.3s cubic-bezier(.2,.8,.2,1) both}
 .js-anim h2.ket,.js-anim .about-h{opacity:0;transform:translateY(16px);transition:opacity .8s cubic-bezier(.2,.8,.2,1),transform .8s cubic-bezier(.2,.8,.2,1)}
 .js-anim h2.ket>span{display:inline-block;transition:transform .9s cubic-bezier(.2,.8,.2,1) .15s}
@@ -310,13 +226,6 @@ a.top:hover{border-color:var(--fink);background:var(--goldbg);transform:translat
 .js-anim h2.ket.in,.js-anim .about-h.in{opacity:1;transform:none}
 .js-anim h2.ket.in>span{transform:none}
 .hero .name{position:relative}
-.hero .name .nm{display:inline-block;transform-origin:50% 100%;animation:bounce 4s cubic-bezier(.3,.7,.3,1) 1.4s infinite}
-.hero .name .shot{position:absolute;left:50%;top:-.62em;font:italic 700 .34em/1 "STIX Two Text","Cambria Math","Times New Roman",serif;letter-spacing:0;color:#F5B82E;text-shadow:0 0 14px rgba(245,184,46,.55);opacity:0;transform:translate(-50%,-70px);animation:fire 4s cubic-bezier(.55,0,.85,.4) 1.4s infinite;pointer-events:none;white-space:nowrap}
-@keyframes fire{0%{opacity:0;transform:translate(-50%,-80px) scale(.9)}8%{opacity:1}36%{opacity:1;transform:translate(-50%,.15em) scale(1)}40%{opacity:0;transform:translate(-50%,.2em) scale(2.2)}100%{opacity:0;transform:translate(-50%,.2em) scale(2.2)}}
-@keyframes bounce{0%,35%{transform:none}38%{transform:translateY(5px) scale(1.03,.9)}46%{transform:translateY(-14px) scale(.98,1.04)}54%{transform:translateY(0) scale(1.02,.96)}61%{transform:translateY(-5px)}68%,100%{transform:none}}
-@media(prefers-reduced-motion:reduce){.hero .name{animation:none}.hero .name .nm,.hero .name .shot{animation:none}.hero .name .shot{display:none}}
-.about .about-facts{grid-area:f;margin-top:0}
-@media(max-width:600px){.about{grid-template-columns:minmax(0,1fr) !important;grid-template-areas:"h" "t" "f" "b"}.about .bloch{justify-self:start}}
 h2.ket{font-family:"STIX Two Text","Cambria Math","Times New Roman",Georgia,serif;font-style:italic;font-weight:600;letter-spacing:0;line-height:1.1;font-size:clamp(36px,4.4vw,56px);display:table;width:auto !important;max-width:100%;margin-inline:auto;text-align:center}
 h2.ket::after{content:"";display:block;width:56px;height:3px;border-radius:3px;background:currentColor;margin:16px auto 0;opacity:.85}
 .lab h2.ket{margin-inline:0;text-align:left}
@@ -333,61 +242,232 @@ h2.ket::after,h2.ket>span.ox::after{display:none}
 h2.ket:has(.ox){padding-bottom:0}
 .lab h2.ket{font-size:clamp(34px,4.2vw,52px);color:var(--lt);font-weight:700}
 .ct{font-family:"Space Grotesk",Inter,sans-serif;font-weight:700;font-size:clamp(24px,2.6vw,32px);letter-spacing:-.02em;line-height:1.15;margin-top:10px}
-@media(max-width:600px){h2.ket{white-space:normal}}
-@media(max-width:600px){.about{padding:18px 18px 20px}}
-@media(min-width:901px){.hero .top{gap:0;width:fit-content;max-width:100%;margin-inline:auto}.hero .top>div:last-child{position:relative;z-index:2;align-self:flex-start;align-items:flex-start;text-align:left;margin-top:-64px;margin-left:calc(40em - 110px);background:light-dark(#ffffff,#1b1b1f);border:1px solid var(--line);border-radius:18px;padding:16px 18px;box-shadow:0 22px 44px -24px rgba(18,18,20,.5)}.hero .top>div:last-child .btns{justify-content:flex-start;margin-top:12px}}
-@media (prefers-color-scheme:dark){:root:not([data-theme=light]) .bloch .vec line{stroke:#f2efe8}:root:not([data-theme=light]) .bloch>circle:last-of-type{fill:#f2efe8}}
+/* ---- hero: name + portrait ---- */
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:clamp(32px,5vw,72px);align-items:center;min-height:min(74vh,680px)}
+.iam{font:italic 600 clamp(24px,2.6vw,34px)/1 "STIX Two Text","Cambria Math","Times New Roman",serif;color:light-dark(#121214,#E2DED6);margin-bottom:10px}
+.hero .name{text-align:left;font-size:clamp(40px,6vw,80px)}
+/* "I am" drops in once, lands on the name with a squash, bounces twice; the name dips on each landing */
+.iam{width:fit-content;transform-origin:left bottom;animation:iamfall 1.5s .55s both}
+@keyframes iamfall{
+  0%{opacity:0;transform:translateY(-150px) rotate(-6deg);animation-timing-function:cubic-bezier(.55,0,1,.45)}
+  12%{opacity:1}
+  40%{transform:translateY(0) scale(1.14,.8);animation-timing-function:cubic-bezier(0,.55,.45,1)}
+  58%{transform:translateY(-28px) scale(.95,1.06) rotate(-2deg);animation-timing-function:cubic-bezier(.55,0,1,.45)}
+  74%{transform:translateY(0) scale(1.07,.9);animation-timing-function:cubic-bezier(0,.55,.45,1)}
+  85%{transform:translateY(-8px);animation-timing-function:cubic-bezier(.55,0,1,.45)}
+  93%{transform:translateY(0) scale(1.02,.97)}
+  100%{opacity:1;transform:none}
+}
+.hero .name{animation:collapse 1.3s cubic-bezier(.2,.8,.2,1) both,namehit 1.5s .55s both}
+@keyframes namehit{0%,38%{transform:none}43%{transform:translateY(5px)}52%{transform:none}73%{transform:none}77%{transform:translateY(2px)}84%,100%{transform:none}}
+.hero-desc{font-size:clamp(18px,1.7vw,21px);line-height:1.5;max-width:30em;margin-top:22px;color:light-dark(#4a4844,#c9c5bd)}
+.hero-desc strong{color:light-dark(#121214,#E2DED6);font-weight:600}
+.hero .btns{justify-content:flex-start;margin-top:28px}
+.btn svg{width:18px;height:18px;margin-right:8px;flex:none}
+/* portrait: gold Bloch sphere, cut-out pops out of its top half; --mx/--my (pointer, -1..1) and --sy (scroll px) drive the parallax of the orbit and kets only; sphere and photo stay still */
+.portrait{--mx:0;--my:0;--sy:0;--ring:6px;position:relative;width:min(100%,440px);aspect-ratio:1;justify-self:center;container-type:inline-size}
+.portrait::before{content:"";position:absolute;inset:6%;border-radius:50%;background:radial-gradient(circle,color-mix(in srgb,#F5B82E 38%,transparent) 0,transparent 68%)}
+.orbit,.ket-tag{transition:translate .7s cubic-bezier(.2,.8,.2,1)}
+.sphere{position:absolute;z-index:1;left:15%;top:15%;width:70%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 34% 28%,#FFEAB3 0,#F5B82E 50%,#C98A12 100%);border:var(--ring) solid light-dark(#ffffff,#1b1b1f);box-shadow:0 0 0 2px #F5B82E,inset 0 -24px 50px rgba(110,60,0,.28),0 30px 60px -30px rgba(18,18,20,.6)}
+.sphere svg{position:absolute;inset:0;width:100%;height:100%;fill:none;stroke:rgba(18,18,20,.22);stroke-width:.6;stroke-dasharray:2 2.5}
+.pop{position:absolute;z-index:2;left:calc(15cqw + var(--ring));width:calc(70cqw - 2*var(--ring));top:-30cqw;bottom:calc(15cqw + var(--ring));overflow:hidden;border-radius:0 0 calc(35cqw - var(--ring)) calc(35cqw - var(--ring));pointer-events:none}
+.pop img{position:absolute;left:calc(-6.5cqw - var(--ring));top:calc(var(--ring) - .1cqw);width:86cqw;height:auto;filter:drop-shadow(0 16px 22px rgba(18,18,20,.35))}
+.orbit{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none;translate:calc(var(--mx)*-14px) calc(var(--my)*-9px + var(--sy)*.06px)}
+.orbit.back{z-index:0}.orbit.front{z-index:3}
+.orbit ellipse,.orbit .arc{fill:none;stroke:#86817A;stroke-width:2}
+.orbit ellipse{stroke-dasharray:5 7}
+.orbit .q{fill:#F5B82E;stroke:light-dark(#121214,#E2DED6);stroke-width:2.5}
+.ket-tag{translate:calc(var(--mx)*20px) calc(var(--my)*14px - var(--sy)*.18px);position:absolute;z-index:4;font:italic 600 18px/1 "STIX Two Text","Cambria Math",serif;padding:8px 12px;border-radius:999px;background:light-dark(#ffffff,#1b1b1f);color:light-dark(#121214,#E2DED6);border:1px solid var(--line);box-shadow:0 10px 24px -14px rgba(18,18,20,.5);animation:floaty 6s ease-in-out infinite}
+.ket-tag.k0{top:8%;right:6%}
+.ket-tag.k1{bottom:9%;left:4%;animation-delay:-3s}
+@keyframes floaty{50%{transform:translateY(-8px)}}
+@media(max-width:860px){.hero-grid{grid-template-columns:minmax(0,1fr);min-height:0;gap:20px}.portrait{order:-1;width:min(82vw,340px)}}
+@media(prefers-reduced-motion:reduce){.hero .name,.iam{animation:none}.ket-tag{animation:none}}
+/* ---- about ---- */
+.about-grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:clamp(28px,4vw,56px);align-items:start}
+.story{display:grid;gap:16px;font-size:17px;color:var(--soft)}
+.story .lead{margin:0;max-width:none;color:var(--ink);font-family:"Space Grotesk",Inter,sans-serif;font-weight:500;font-size:clamp(21px,2.1vw,27px);line-height:1.35}
+.story .lead strong{font-weight:700;background:linear-gradient(transparent 62%,var(--goldbg) 62%)}
+.glance{background:var(--chip);border:1px solid var(--line);border-radius:20px;padding:24px}
+.glance-h{display:flex;justify-content:space-between;align-items:center;gap:16px}
+.glance-h h3{font-size:22px}
+.glance .bloch{width:76px;height:76px;flex:none}
+.glance dl{margin:10px 0 0;display:grid}
+.glance dl div{padding:10px 0;border-bottom:1px solid var(--line)}
+.glance dt{font-size:13px;color:var(--soft)}
+.glance dd{margin:2px 0 0;font-weight:600}
+.glance .open{margin-top:18px;padding:10px 14px;border-radius:14px;background:var(--goldbg);border:1px solid #F5B82E;flex-wrap:nowrap}
+.glance .open p{font-size:15px}
+.glance .open .dot{background:#F5B82E;animation:ping 2s ease-out infinite}
+@keyframes ping{0%{box-shadow:0 0 0 0 rgba(245,184,46,.7)}70%,100%{box-shadow:0 0 0 9px rgba(245,184,46,0)}}
+.glance .btn{border-color:var(--ink);color:var(--ink);background:transparent}
+.glance .btn.solid,.glance .btn:hover{background:var(--ink);color:var(--bg)}
+.glance .btn:hover{box-shadow:0 10px 22px -10px rgba(18,18,20,.45)}
+@media(max-width:900px){.about-grid{grid-template-columns:minmax(0,1fr)}}
+@media(prefers-reduced-motion:reduce){.glance .open .dot{animation:none}}
+/* ---- research summary, projects, logos ---- */
+.sum{margin-top:14px;font-size:15px;line-height:1.6;color:var(--ls)}
+.sum em{font-family:Georgia,"Times New Roman",serif;font-size:1.1em;color:var(--lt)}
+.sum sub{font-size:.75em;line-height:0}
+.proj h3 .pn{color:light-dark(#9A6A12,#F5B82E)}
+.plink{color:inherit;text-decoration:none;text-decoration-thickness:2px;text-underline-offset:4px;text-decoration-color:#F5B82E}
+.plink:hover{text-decoration-line:underline}
+.plink .ext{display:inline-block;width:.75em;height:.75em;margin-left:.3em;vertical-align:-.02em;opacity:.55;transition:transform .2s,opacity .2s}
+.plink:hover .ext,.plink:focus-visible .ext{opacity:1;transform:translate(2px,-2px)}
+.vh{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+@media(prefers-reduced-motion:reduce){.plink .ext{transition:none}.plink:hover .ext{transform:none}}
+.logo{display:inline-grid;place-items:center;min-width:36px;height:36px;padding:0 7px;border-radius:10px;background:var(--chip);border:1px solid var(--line);font:700 11px/1 "Space Grotesk",sans-serif;letter-spacing:.03em;color:var(--ink)}
+.org .logo{margin-right:4px}
+@media(max-width:600px){.org{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:8px}.org .logo{grid-column:1;grid-row:1;margin:0}.org .pill{grid-column:3;grid-row:1;margin:0;justify-self:end}.org .oname{grid-column:1/-1;grid-row:2;line-height:1.25}.logo.img{height:34px;padding:3px 6px}.logo.img img{height:26px;max-width:92px}}
+.logo.img{height:40px;padding:4px 8px;background:light-dark(#ffffff,#C6C8CC);border-color:var(--line)}
+a.logo.img{text-decoration:none;transition:border-color .2s,box-shadow .2s,transform .2s,filter .2s}
+/* dark mode: soft chip; logos use multiply so the ISNOV JPG's baked-in white takes the chip colour (no dimming filter, logos keep full contrast) */
+a.logo.img:hover{background:light-dark(#ffffff,#D3D5D9)}
+.logo.img img{mix-blend-mode:multiply}
+a.logo.img:hover{border-color:#F5B82E;box-shadow:0 6px 16px -8px rgba(18,18,20,.4);transform:translateY(-2px)}
+@media(prefers-reduced-motion:reduce){a.logo.img,a.logo.img:hover{transition:none;transform:none}}
+.logo.img img{display:block;height:30px;width:auto;max-width:110px;object-fit:contain}
+/* ---- contact + footer ---- */
+.contact{padding-bottom:calc(24px + env(safe-area-inset-bottom,0px))}
+.contact .lead{margin-top:14px}
+.contact .btn:not(.solid){color:#121214;background:transparent}
+.contact .btn:not(.solid):hover{background:#121214;color:#ffffff}
+.contact a:focus-visible,.contact button:focus-visible{outline-color:#121214}
+.contact .fbottom{margin-top:clamp(44px,6vw,72px);padding-top:20px;font-size:13px;color:var(--soft)}
+.fid .fname{font-size:19px;color:var(--ink)}
+.contact nav.flinks{position:static;z-index:auto;display:flex;flex-wrap:wrap;gap:0 18px;padding:0;background:none;border:0;-webkit-backdrop-filter:none;backdrop-filter:none}
+.contact .flinks a{min-height:40px;font-size:14px;background-image:linear-gradient(#121214,#121214)}
+.contact a.top{border-color:var(--line);color:#121214}
+.contact a.top:hover{border-color:#121214;background:rgba(255,255,255,.4)}
+@media(max-width:700px){.contact .fbottom{flex-direction:column;align-items:flex-start}}
+/* footer "cryostat night": cool graphite with a faint cryogenic-blue glow; accents in blue (no gold on dark outside research) */
+.contact{--ink:light-dark(#f2efe8,#E2DED6);--soft:rgba(242,239,232,.72);--line:rgba(242,239,232,.16);color:light-dark(#f2efe8,#E2DED6) !important;background:radial-gradient(100% 80% at 85% 0%,light-dark(rgba(143,211,255,.38),rgba(143,211,255,.16)),transparent 62%),radial-gradient(80% 70% at 0% 100%,light-dark(rgba(143,211,255,.22),rgba(143,211,255,.07)),transparent 62%),#15161a;border-top:1px solid rgba(143,211,255,.28)}
+.contact .btn{border-color:rgba(242,239,232,.55)}
+.contact .btn.solid{background:#8FD3FF;color:#121214;border-color:#8FD3FF}
+.contact .btn.solid:hover{background:#B8E4FF;border-color:#B8E4FF}
+.contact .btn:not(.solid){color:light-dark(#f2efe8,#E2DED6);background:transparent}
+.contact .btn:not(.solid):hover{background:light-dark(#f2efe8,#E2DED6);color:#121214}
+.contact .btn:hover{box-shadow:0 10px 22px -10px rgba(143,211,255,.5)}
+.contact a:focus-visible,.contact button:focus-visible{outline-color:#8FD3FF}
+.contact .flinks a{background-image:linear-gradient(#8FD3FF,#8FD3FF)}
+.contact a.top{color:light-dark(#f2efe8,#E2DED6)}
+.contact a.top:hover{border-color:#8FD3FF;background:rgba(143,211,255,.12)}
+/* ---- glass navbar + burger ---- */
+nav[aria-label=Sections] .wrap{background:color-mix(in srgb,var(--bg) 55%,transparent);-webkit-backdrop-filter:blur(18px) saturate(1.8);backdrop-filter:blur(18px) saturate(1.8);border:1px solid color-mix(in srgb,var(--ink) 12%,transparent);box-shadow:inset 0 1px 0 light-dark(rgba(255,255,255,.7),rgba(255,255,255,.08)),0 14px 34px -18px rgba(18,18,20,.55)}
+nav[aria-label=Sections] .links a{text-decoration:none}
+.brand,.burger{display:none}
+.lang{flex:none;display:grid;place-items:center;width:40px;height:40px;margin-left:4px;border-radius:50%;border:0;background:var(--chip);color:var(--ink);cursor:pointer;font:700 13px/1 "Space Grotesk",sans-serif;letter-spacing:.03em;transition:background .25s}
+.lang:hover{background:var(--goldbg)}
+.theme{flex:none;display:grid;place-items:center;width:40px;height:40px;margin-left:4px;border-radius:50%;border:0;background:var(--chip);color:var(--ink);cursor:pointer;transition:background .25s,transform .4s cubic-bezier(.2,.8,.2,1)}
+.theme:hover{background:var(--goldbg);transform:rotate(-20deg)}
+.theme svg{width:19px;height:19px;grid-area:1/1}
+.theme .sun{display:none}
+:root[data-theme=dark] .theme .sun{display:block}:root[data-theme=dark] .theme .moon{display:none}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]) .theme .sun{display:block}:root:not([data-theme=light]) .theme .moon{display:none}}
+@media(max-width:760px){.theme{width:44px;height:44px;margin-left:auto;margin-right:6px}.lang{width:44px;height:44px;margin:0 6px 0 0}.burger{order:3}}
+@media(prefers-reduced-motion:reduce){.theme,.theme:hover{transition:none;transform:none}}
+@media(max-width:760px){
+  nav[aria-label=Sections]{padding:calc(10px + env(safe-area-inset-top,0px)) 12px 0}
+  nav[aria-label=Sections] .wrap{position:relative;z-index:0;width:100%;justify-content:space-between;align-items:center;padding:5px 5px 5px 18px;background:none;-webkit-backdrop-filter:none;backdrop-filter:none}
+  nav[aria-label=Sections] .wrap::before,nav[aria-label=Sections] .links{background:color-mix(in srgb,var(--bg) 60%,transparent);-webkit-backdrop-filter:blur(18px) saturate(1.8);backdrop-filter:blur(18px) saturate(1.8)}
+  nav[aria-label=Sections] .wrap::before{content:"";position:absolute;inset:0;z-index:-1;border-radius:inherit}
+  .brand{display:inline-flex;font:700 19px/1 "Space Grotesk",sans-serif;letter-spacing:-.02em;text-decoration:none;color:var(--ink)}
+  .brand span{color:#F5B82E}
+  .burger{display:grid;place-content:center;gap:5px;width:44px;height:44px;border-radius:50%;border:0;background:var(--chip);color:var(--ink);cursor:pointer}
+  .burger span{display:block;width:18px;height:2px;border-radius:2px;background:currentColor;transition:transform .25s,opacity .2s}
+  nav.open .burger span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  nav.open .burger span:nth-child(2){opacity:0}
+  nav.open .burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  nav[aria-label=Sections] .links{position:absolute;top:calc(100% + 8px);left:0;right:0;display:flex;flex-direction:column;gap:2px;padding:8px;border-radius:22px;border:1px solid color-mix(in srgb,var(--ink) 12%,transparent);box-shadow:0 20px 40px -20px rgba(18,18,20,.6);opacity:0;visibility:hidden;transform:translateY(-8px) scale(.98);transform-origin:top center;transition:opacity .2s,transform .25s,visibility 0s .25s}
+  nav.open .links{opacity:1;visibility:visible;transform:none;transition:opacity .2s,transform .25s}
+  nav[aria-label=Sections] .links a{padding:13px 16px;font-size:16px}
+}
+@media(prefers-reduced-motion:reduce){.burger span,nav[aria-label=Sections] .links{transition:none}}
+/* navbar contrast: glass pill inverted from the theme (graphite on light pages, light on dark pages) so it never blends in */
+nav[aria-label=Sections]{--nbg:light-dark(rgba(255,255,255,.86),rgba(242,239,232,.9));--nfg:#121214;--nsoft:rgba(18,18,20,.8);--nhov:rgba(18,18,20,.07);--nhov2:rgba(18,18,20,.13);--nline:rgba(18,18,20,.16)}
+nav[aria-label=Sections] .wrap{background:var(--nbg);border-color:var(--nline);box-shadow:inset 0 1px 0 rgba(255,255,255,.8),0 16px 36px -16px rgba(18,18,20,.5),0 2px 8px rgba(18,18,20,.1)}
+nav[aria-label=Sections] .links a{color:var(--nsoft)}
+nav[aria-label=Sections] .links a:hover{background:var(--nhov);color:var(--nfg)}
+nav[aria-label=Sections] .links a.on{background:var(--nfg);color:#f7f4ee}
+nav[aria-label=Sections] .theme,nav[aria-label=Sections] .lang,nav[aria-label=Sections] .burger{background:var(--nhov);color:var(--nfg)}
+nav[aria-label=Sections] .theme:hover,nav[aria-label=Sections] .lang:hover{background:var(--nhov2)}
+nav[aria-label=Sections] .brand{color:var(--nfg)}
+nav[aria-label=Sections] a:focus-visible,nav[aria-label=Sections] button:focus-visible{outline-color:var(--nfg)}
+@media(max-width:760px){nav[aria-label=Sections] .wrap{background:none}nav[aria-label=Sections] .wrap::before,nav[aria-label=Sections] .links{background:var(--nbg)}nav[aria-label=Sections] .links{border-color:var(--nline)}}
+/* ---- section titles always on one line ---- */
+h2.ket{white-space:nowrap}
+h2.ket:has(.ox){font-size:min(clamp(36px,4.4vw,56px),calc((100vw - 40px) / 14))}
 </style>
 </head>
 <body>
 <nav aria-label="Sections"><div class="wrap">
-  
-  <div class="links">
+  <a class="brand" href="#home">Gift<span>.</span></a>
+  <button type="button" class="burger" aria-expanded="false" aria-controls="navlinks" aria-label="Open menu"><span></span><span></span><span></span></button>
+  <div class="links" id="navlinks">
     <a href="#about">About</a><a href="#research">Research</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#contact">Contact</a>
   </div>
+  <button type="button" class="theme" aria-label="Switch to dark mode"><svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg><svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7z"/></svg></button>
+  <button type="button" class="lang" aria-label="Switch to French" lang="fr">FR</button>
 </div></nav>
 
-<header class="hero band" id="about"><div class="wrap">
-  <h1 class="name"><span class="shot" aria-hidden="true">|α|² + |β|² = 1</span><span class="nm">Gift Anderson MOUTCHEU</span></h1>
-  <div class="top">
-    <div>
-      <div class="about">
-        <div class="about-l"><h2 class="about-h"><span>|</span>about-me<span>⟩</span></h2>
-        <svg class="bloch" viewBox="0 0 120 120" aria-hidden="true">
-          <circle cx="60" cy="60" r="44" fill="none" stroke="currentColor" stroke-width="1.5"/>
-          <ellipse cx="60" cy="60" rx="44" ry="13" fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="3 4" opacity=".7"/>
-          <line x1="60" y1="10" x2="60" y2="110" stroke="currentColor" stroke-width="1" opacity=".45"/>
-          <g class="vec"><line x1="60" y1="60" x2="86" y2="27" stroke="#121214" stroke-width="2.4" stroke-linecap="round"/><circle cx="86" cy="27" r="5.5" fill="#F5B82E" stroke="#121214" stroke-width="1.5"/></g>
-          <circle cx="60" cy="60" r="2.6" fill="#121214"/>
-          <text x="60" y="8" text-anchor="middle">|0⟩</text><text x="60" y="120" text-anchor="middle">|1⟩</text>
-        </svg></div>
-        <div>
-        <p class="lead">Software engineering student at <strong>IMT Atlantique</strong>, building tools for <strong>quantum computing</strong>. I ship <strong>production software</strong>, and I research how to <strong>check quantum programs while they run</strong>.</p>
-        <ul class="about-facts"><li>Qiskit · IBM Quantum</li><li>Spring Boot · Angular</li></ul>
-        </div>
-      </div>
-    </div>
-    <div>
-      <div class="open"><span class="dot" aria-hidden="true"></span><p>Open to a 4–5 month internship from April 2027, in quantum/software engineering</p></div>
-      <div class="btns">
-        <a class="btn solid" href="#contact">Get in touch</a>
-        <a class="btn" href="https://linkedin.com/in/moutcheugift" rel="noopener">LinkedIn</a>
-        <a class="btn" href="https://github.com/magss0n" rel="noopener">GitHub</a>
-        <a class="btn" href="https://gitlab.com/magss0n" rel="noopener">GitLab</a>
-      </div>
-    </div>
+<header class="hero band" id="home"><div class="wrap hero-grid">
+  <div class="hero-txt">
+    <p class="iam">I am</p>
+    <h1 class="name">Gift Anderson MOUTCHEU</h1>
+    <p class="hero-desc">Software engineering student at <strong>IMT Atlantique</strong>. I build production software and currently research how to debug <strong>quantum programs</strong>.</p>
+    <div class="btns"><a class="btn solid" href="cv-gift-moutcheu-en.pdf" data-cv download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>Download my CV</a></div>
   </div>
-  <div class="fig" id="fig" role="img" aria-label="A quantum circuit with four wires. Gates along the wires stand for projects from 2024 to 2026; a dashed probe near the end stands for the runtime assertion research; measurement meters close each wire."><svg id="circ"></svg></div>
-  <p class="cap">Read it left to right, one gate per project: UI (point-of-sale app, 2024), KMP (Kotlin Multiplatform, 2025), Microservices (LogiTrack, 2025), RAG (research paper, 2025), PMS (BookInn hotel system, 2026), Qiskit (2026). The dashed probe is the SWAP-based runtime assertion I research, checking a qubit's state without breaking the program.</p>
+  <div class="portrait">
+    <svg class="orbit back" viewBox="0 0 400 400" aria-hidden="true"><g transform="rotate(-24 200 200)"><ellipse cx="200" cy="200" rx="196" ry="58"/><circle class="q" r="9"><animateMotion dur="9s" repeatCount="indefinite" path="M4 200a196 58 0 1 0 392 0a196 58 0 1 0 -392 0"/></circle></g></svg>
+    <div class="sphere" aria-hidden="true"><svg viewBox="0 0 100 100"><ellipse cx="50" cy="50" rx="49" ry="14"/><ellipse cx="50" cy="50" rx="15" ry="49"/></svg></div>
+    <div class="pop"><img src="gift-cutout.webp" alt="Portrait of Gift Anderson MOUTCHEU, arms crossed, wearing glasses and a patterned sweater vest" width="750" height="1000" fetchpriority="high"></div>
+    <svg class="orbit front" viewBox="0 0 400 400" aria-hidden="true"><g transform="rotate(-24 200 200)"><path class="arc" d="M4 200a196 58 0 0 0 392 0"/><circle class="q" r="9"><animateMotion dur="9s" repeatCount="indefinite" path="M4 200a196 58 0 1 0 392 0a196 58 0 1 0 -392 0"/><animate attributeName="opacity" values="1;0" keyTimes="0;0.5" calcMode="discrete" dur="9s" repeatCount="indefinite"/></circle></g></svg>
+    <span class="ket-tag k0" aria-hidden="true">|0⟩</span><span class="ket-tag k1" aria-hidden="true">|1⟩</span>
+  </div>
 </div></header>
 
 <main>
+<section class="band about-sec" id="about"><div class="wrap">
+  <div class="sec-head"><h2 class="ket"><span>|</span>about-me<span>⟩</span></h2><p>Who I am, beyond the CV.</p></div>
+  <div class="about-grid">
+    <div class="story">
+      <p class="lead">I'm a software engineer who likes to understand a system <strong>end to end</strong>, from the first sketch to the server it runs on.</p>
+      <p>I'm a Master of Engineering (M.Eng.) student with specialty software and distributed systems at IMT Atlantique in Brest, as a double degree after four years of computer science at Saint Jean Ingénieur. Along the way I've done three internships, and each one shipped a real product: a point-of-sale app, a Kotlin Multiplatform app, and the BookInn hotel management system.</p>
+      <p>I care about how things look as much as how they work. On BookInn I designed every receptionist screen in Figma before building it in Angular; for RETAIL CLOUD I set up the Ubuntu server, Nginx and the CI/CD pipeline myself. I pick things up fast: under two weeks to get productive with Kotlin Multiplatform at ORION.</p>
+      <p>Quantum computing is where I'm heading. My research at IMT Atlantique asks a simple question: how do you find a bug in a program you can't look inside without breaking it? I followed the IBM Qiskit Global Summer School during the summer holidays of 2026, and I'd like my internship to be in quantum software.</p>
+      <p>Away from the keyboard, I train in Nanbudo (green belt), play electric guitar, do voice acting, and read history and science fiction. I speak French and English, and I'm learning German.</p>
+    </div>
+    <aside class="glance">
+      <div class="glance-h"><h3>At a glance</h3><svg class="bloch" viewBox="0 0 120 120" aria-hidden="true">
+        <circle cx="60" cy="60" r="44" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        <ellipse cx="60" cy="60" rx="44" ry="13" fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="3 4" opacity=".7"/>
+        <line x1="60" y1="10" x2="60" y2="110" stroke="currentColor" stroke-width="1" opacity=".45"/>
+        <g class="vec"><line x1="60" y1="60" x2="86" y2="27" stroke="var(--ink)" stroke-width="2.4" stroke-linecap="round"/><circle cx="86" cy="27" r="5.5" fill="#F5B82E" stroke="var(--ink)" stroke-width="1.5"/></g>
+        <circle cx="60" cy="60" r="2.6" fill="var(--ink)"/>
+        <text x="60" y="8" text-anchor="middle">|0⟩</text><text x="60" y="120" text-anchor="middle">|1⟩</text>
+      </svg></div>
+      <dl>
+        <div><dt>Studying</dt><dd>M.Eng., IMT Atlantique, Brest</dd></div>
+        <div><dt>Researching</dt><dd>Runtime assertions for quantum programs</dd></div>
+        <div><dt>Strongest in</dt><dd>Java, Spring Boot, Angular</dd></div>
+        <div><dt>Languages</dt><dd>French, English, German (learning)</dd></div>
+      </dl>
+      <div class="open"><span class="dot" aria-hidden="true"></span><p>Open to a 4–5 month internship from April 2027, in quantum or software engineering</p></div>
+      <div class="btns">
+        <a class="btn solid" href="#contact">Get in touch</a>
+        <a class="btn" href="https://linkedin.com/in/giftmoutcheu" rel="noopener">LinkedIn</a>
+        <a class="btn" href="https://github.com/giftmoutcheu" rel="noopener">GitHub</a>
+      </div>
+    </aside>
+  </div>
+</div></section>
+
 <section class="band lab" id="research"><div class="wrap">
   <div class="lab-top">
     <div>
       <h2 class="ket"><span>|</span>research<span>⟩</span></h2>
       <p class="meta" style="margin-top:14px">IMT Atlantique · research paper · since October 2026</p>
-      <h3 class="rtitle">SWAP-based runtime assertions for debugging quantum programs</h3>
+      <h3 class="rtitle">Debugging Quantum Software Using Runtime Assertions</h3>
       <span class="status"><span class="dot" aria-hidden="true"></span>In progress</span>
       <p class="q">Measuring a quantum state changes it, so bugs can't be found by inspecting it. SWAP-based assertions check it mid-run, to detect and locate bugs.</p>
     </div>
@@ -414,39 +494,21 @@ h2.ket:has(.ox){padding-bottom:0}
         <path d="M398 162H442M398 168H442" fill="none" stroke="#8FD3FF" stroke-width="2"/>
         <text x="448" y="171" font-family="Space Grotesk,sans-serif" font-size="19" font-weight="700" fill="#8FD3FF">0 = ok</text>
       </svg>
-      <ul class="keys">
-        <li><i aria-hidden="true"></i><span>The program is split into P1 and P2. <em>q</em><sub>2</sub> leaves P1 in some state |ψ⟩, which should equal an expected state |c⟩.</span></li>
-        <li><i class="p" aria-hidden="true"></i><span>G⁻¹ is applied to <em>q</em><sub>2</sub> while G prepares the ancilla in |c⟩; the wires then cross, so P2 always continues with the expected state.</span></li>
-        <li><i class="m" aria-hidden="true"></i><span>What is measured is G⁻¹ applied to <em>q</em><sub>2</sub>: it reads 0 whenever |ψ⟩ = |c⟩. Across many shots, more than 5% non-zero results flags a bug rather than noise.</span></li>
-      </ul>
+      <p class="sum">The program is split into two parts, P1 and P2. Between them, we check that a qubit <em>q</em><sub>2</sub> is in the expected state |c⟩, while an ancilla qubit is prepared in that state and forwarded to P2. This way, the quantum execution goes on unaltered. The checked qubit reads 0 when its state was right; more than 5% non-zero results over many shots flags a bug rather than noise.</p>
     </figure>
-  </div>
-  <div class="lab-mid">
-    <figure class="code">
-      <figcaption>The assertion in Qiskit, inserted at line 14 between P1 and P2</figcaption>
-<pre><code><span class="ln"><b>9</b><span class="c"># Program part P1</span></span><span class="ln"><b>10</b>qc.h(0)</span><span class="ln"><b>11</b>qc.cx(0, 1)</span><span class="ln"><b>12</b>qc.x(2)</span><span class="ln"><b>13</b><span class="c"># line 13: the state of Q2 should be |1&gt;</span></span><span class="ln hl"><b>14</b>qc.<span class="k">append</span>(assertion_circuit, [2, 3])</span><span class="ln"><b>15</b><span class="c"># Program part P2</span></span><span class="ln"><b>16</b>qc.cx(1, 2)</span><span class="ln"><b>17</b>qc.measure_all()</span></code></pre>
-    </figure>
-    <div class="rq">
-      <div class="rqc"><p class="lbl">Research question</p><p><b>Detection accuracy:</b> how accurately does the assertion detect injected faults across different program locations?</p></div>
-      <div class="rqc"><p class="lbl">Metric</p><div class="er">ER = <span class="frac"><span>N<sub>incorrect</sub></span><span>N<sub>total</sub></span></span> &gt; 5% → bug</div><p class="sm">Share of shots where the checked qubit does not read 0. Above 5%, the result is a real bug rather than normal hardware noise.</p></div>
-    </div>
   </div>
   <ol class="pipe">
     <li class="done"><h3>Review</h3><p class="st">Done</p><p>State-of-the-art quantum assertions: statistical, dynamic and SWAP-based precise runtime assertions.</p></li>
     <li class="now"><h3>Apply</h3><p class="st">Under way</p><p>SWAP-based assertions inserted into common quantum algorithms in Qiskit, building on hardware-friendly dynamic assertions.</p></li>
     <li><h3>Evaluate</h3><p class="st">Next</p><p>Inject faults, then measure detection on the noisy IBM Aer simulator, and on real IBM hardware if time permits.</p><div class="metrics"><span>Removed gates</span><span>Wrong gates (X for Z)</span><span>Reordered instructions</span></div></li>
   </ol>
-  <div class="persp">
-    <p><b>Perspectives</b> · open directions beyond this paper, for future work</p>
-    <div class="metrics"><span>Assertions over groups of entangled qubits</span><span>A noise threshold computed per program, instead of a fixed 5%</span><span>Cost of the extra gates on real hardware</span><span>Automatic insertion of assertions from user specifications</span></div>
-  </div>
   <ul class="refs">
     <li>Builds on: <a href="https://doi.org/10.1145/3307650.3322213" rel="noopener">Huang and Martonosi, ISCA 2019</a> · <a href="https://doi.org/10.1145/3373376.3378488" rel="noopener">Liu, Byrd and Zhou, ASPLOS 2020</a> · <a href="https://api.semanticscholar.org/CorpusID:231799121" rel="noopener">Liu and Zhou, HPCA 2021</a></li>
   </ul>
 </div></section>
 
 <section class="band" id="projects"><div class="wrap">
-  <div class="sec-head"><h2 class="ket"><span>|</span>projects<span>⟩</span></h2><p>Research, internship products and systems I deployed end to end.</p></div>
+  <div class="sec-head"><h2 class="ket"><span>|</span>projects<span>⟩</span></h2><p>Research and systems I built and deployed end to end.</p></div>
   <div id="plist"></div>
 </div></section>
 
@@ -456,16 +518,16 @@ h2.ket:has(.ox){padding-bottom:0}
   <div>
     <h3 style="margin-bottom:18px">Internships</h3>
     <ol class="rail">
-      <li><div class="stamp">2026<small>May–Aug</small></div><div class="card"><div class="org">ISNOV SARL <span class="pill">4 months</span></div><h3>Frontend developer and UI designer</h3><p>BookInn hotel management system: designed the receptionist's screens in Figma, built them in Ionic and Angular, and added Spring Boot endpoints. Scrum, with weekly reviews alongside the product owner.</p><div class="wins"><span><b>6</b>modules shipped</span><span><b>16</b>sprint reviews</span></div><div class="tags"><span>Angular</span><span>Ionic</span><span>Figma</span><span>Spring Boot</span></div></div></li>
-      <li><div class="stamp">2025<small>Jun–Aug</small></div><div class="card"><div class="org">ORION <span class="pill">3 months</span></div><h3>Mobile developer</h3><p>Kotlin Multiplatform app running on Android, desktop and web from one codebase, built with Jetpack Compose and Material 3, with code reviews and testing.</p><div class="wins"><span><b>3</b>platforms</span><span><b>&lt;2</b>weeks to learn the stack</span></div><div class="tags"><span>Kotlin</span><span>Jetpack Compose</span><span>MVVM</span></div></div></li>
-      <li><div class="stamp">2024<small>Jun–Aug</small></div><div class="card"><div class="org">ISNOV SARL <span class="pill">3 months</span></div><h3>UI designer and frontend developer</h3><p>Point-of-sale app built from scratch in a team of three: needs analysis for customer and admin users, Figma mock-ups, then the Angular front end. Approved by the company head at the final demo.</p><div class="wins"><span><b>0</b>late sprints</span><span><b>15+</b>frames designed</span></div><div class="tags"><span>Angular</span><span>TailwindCSS</span><span>Figma</span></div></div></li>
+      <li><div class="stamp">2026<small>May–Aug</small></div><div class="card"><div class="org"><a class="logo img" href="https://isnov.com/home/" target="_blank" rel="noopener noreferrer" aria-label="ISNOV website (opens in a new tab)" title="ISNOV website"><img src="logos/isnov.jpg" alt="" width="300" height="65" loading="lazy"></a><span class="oname">ISNOV SARL</span> <span class="pill">4 months</span></div><h3>Frontend developer and UI designer</h3><p>BookInn hotel management system: designed the receptionist's screens in Figma, built them in Ionic and Angular, and added Spring Boot endpoints. Scrum, with weekly reviews alongside the product owner.</p><div class="wins"><span><b>6</b>modules shipped</span><span><b>16</b>sprint reviews</span></div><div class="tags"><span>Angular</span><span>Ionic</span><span>Figma</span><span>Spring Boot</span></div></div></li>
+      <li><div class="stamp">2025<small>Jun–Aug</small></div><div class="card"><div class="org"><a class="logo img" href="https://horion.io/" target="_blank" rel="noopener noreferrer" aria-label="ORION website (opens in a new tab)" title="ORION website"><img src="logos/orion.png" alt="" width="480" height="136" loading="lazy"></a><span class="oname">ORION</span> <span class="pill">3 months</span></div><h3>Mobile developer</h3><p>Kotlin Multiplatform app running on Android, desktop and web from one codebase, built with Jetpack Compose and Material 3, with code reviews and testing.</p><div class="wins"><span><b>3</b>platforms</span><span><b>&lt;2</b>weeks to learn the stack</span></div><div class="tags"><span>Kotlin</span><span>Jetpack Compose</span><span>MVVM</span></div></div></li>
+      <li><div class="stamp">2024<small>Jun–Aug</small></div><div class="card"><div class="org"><a class="logo img" href="https://isnov.com/home/" target="_blank" rel="noopener noreferrer" aria-label="ISNOV website (opens in a new tab)" title="ISNOV website"><img src="logos/isnov.jpg" alt="" width="300" height="65" loading="lazy"></a><span class="oname">ISNOV SARL</span> <span class="pill">3 months</span></div><h3>UI designer and frontend developer</h3><p>Point-of-sale app built from scratch in a team of three: needs analysis for customer and admin users, Figma mock-ups, then the Angular front end. Approved by the company head at the final demo.</p><div class="wins"><span><b>0</b>late sprints</span><span><b>15+</b>frames designed</span></div><div class="tags"><span>Angular</span><span>TailwindCSS</span><span>Figma</span></div></div></li>
     </ol>
   </div>
   <div>
     <h3 style="margin-bottom:18px">Education</h3>
     <ol class="rail">
-      <li><div class="stamp">2026<small>to 2028</small></div><div class="card"><div class="org">IMT Atlantique, Brest <span class="pill">Double degree</span></div><h3>M.Eng., Software and Distributed Systems Engineering</h3><p>Reliability of distributed systems, concurrent programming in Go, high-performance computing, research methods, and a team project for a partner company.</p><div class="tags"><span>Go</span><span>Distributed systems</span><span>Research</span></div></div></li>
-      <li><div class="stamp">2022<small>to 2026</small></div><div class="card"><div class="org">Institut Universitaire Saint Jean <span class="pill">GPA 3.53 / 4.0</span></div><h3>M.Eng., Computer Science and Information Systems</h3><p>Software engineering and UML, testing and quality, machine learning, statistics, operations research, cloud and virtualisation.</p><div class="tags"><span>Software engineering</span><span>ML</span><span>Operations research</span></div></div></li>
+      <li><div class="stamp">2026<small>to 2028</small></div><div class="card"><div class="org"><a class="logo img" href="https://www.imt-atlantique.fr/fr" target="_blank" rel="noopener noreferrer" aria-label="IMT Atlantique website (opens in a new tab)" title="IMT Atlantique website"><img src="logos/imt-atlantique.svg" alt="" width="592" height="230" loading="lazy"></a><span class="oname">IMT Atlantique, Brest</span> <span class="pill">Double degree</span></div><h3>M.Eng: Software Engineering in Distributed Systems</h3><p>Reliability of distributed systems, concurrent programming in Go, high-performance computing, research methods, and a team project for a partner company.</p><div class="tags"><span>Go</span><span>Distributed systems</span><span>Research</span></div></div></li>
+      <li><div class="stamp">2022<small>to 2026</small></div><div class="card"><div class="org"><a class="logo img" href="https://saintjeaningenieur.org/" target="_blank" rel="noopener noreferrer" aria-label="Saint Jean Ingénieur website (opens in a new tab)" title="Saint Jean Ingénieur website"><img src="logos/saint-jean-ingenieur.png" alt="" width="480" height="225" loading="lazy"></a><span class="oname">Saint Jean Ingénieur</span> <span class="pill">GPA 3.53 / 4.0</span></div><h3>M.Eng: Computer Science and Information Systems</h3><p>Software engineering and UML, testing and quality, machine learning, statistics, operations research, cloud and virtualisation.</p><div class="tags"><span>Software engineering</span><span>ML</span><span>Operations research</span></div></div></li>
     </ol>
   </div>
   </div>
@@ -474,7 +536,6 @@ h2.ket:has(.ox){padding-bottom:0}
 <section class="band" id="skills"><div class="wrap">
   <div class="sec-head"><h2 class="ket"><span>|</span>skills<span>⟩</span></h2><p>Strongest in Java, Spring Boot and Angular; growing fast in quantum.</p></div>
   <div class="skills" id="slist"></div>
-  <p class="legend"><span><i aria-hidden="true"></i>Used across several projects or in production</span><span><i class="o" aria-hidden="true"></i>Used in a project, course or research</span></p>
 </div></section>
 
 <section class="band more" id="more"><div class="wrap">
@@ -490,75 +551,111 @@ h2.ket:has(.ox){padding-bottom:0}
       <li><b>English</b><span class="lvl" aria-label="4 of 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span><small>Fluent, TOEIC 930/990</small></li>
       <li><b>German</b><span class="lvl" aria-label="1 of 5"><i class="on"></i><i></i><i></i><i></i><i></i></span><small>Beginner, learning at IMT Atlantique</small></li>
     </ul></div>
-    <div class="box"><h3>Off screen</h3><div class="life">
+    <div class="box"><h3>Beyond the code</h3><div class="life">
       <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M8 3 3.5 6.5 5.5 10 7 9v12h10V9l1.5 1 2-3.5L16 3"/><path d="M8 3l4 6 4-6"/><path d="M12 9v5"/><path d="M7 14h10"/><path d="M12 14l-1.8 4.5M12 14l1.8 4.5"/></svg>Nanbudo: Green belt</span>
       <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><rect x="10.5" y="1.5" width="3" height="3.5" rx=".8"/><path d="M12 5v6.5"/><path d="M9.5 11.5c-2 0-3.2 1.3-3.2 2.9 0 .9.4 1.6.9 2.1-.9.6-1.6 1.5-1.6 2.7C5.6 21.2 7.6 22.3 12 22.3s6.4-1.1 6.4-3.1c0-1.2-.7-2.1-1.6-2.7.5-.5.9-1.2.9-2.1 0-1.6-1.2-2.9-3.2-2.9z"/><path d="M10.2 15.5h3.6M10.2 18h3.6"/></svg>Electric guitar</span>
       <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M3 9l9-5 9 5"/><path d="M4 9h16"/><path d="M6 9v9M10 9v9M14 9v9M18 9v9"/><path d="M3 20.5h18"/></svg>History</span>
       <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M12 2c3 2.5 4.5 6 4.5 10l-2 3h-5l-2-3C7.5 8 9 4.5 12 2z"/><circle cx="12" cy="9" r="1.6"/><path d="M9.5 15 7 18l.5-4.2M14.5 15l2.5 3-.5-4.2"/><path d="M11 18.5 12 21l1-2.5"/></svg>Science fiction</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="2.5" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0"/><path d="M12 17.5V21M8.5 21h7"/></svg>Voice acting</span>
     </div></div>
   </div>
 </div></section>
 </main>
 
-<section class="band contact" id="contact"><div class="wrap">
+<footer class="band contact" id="contact"><div class="wrap">
   <h2 class="ket ket-c"><span>|</span>contact<span>⟩</span></h2>
   <div class="grid">
     <div>
       <p class="ct">Let's talk about April 2027</p>
-      <p class="lead" style="margin-top:14px">I'm looking for a 4–5 month internship in quantum software or software engineering, in France or remote-friendly. A short call is the best start.</p>
-      <div class="btns"><a class="btn solid" href="mailto:moutcheuanderson@gmail.com">Email me</a></div>
+      <p class="lead">I'm looking for a 4–5 month internship in quantum software or software engineering, in France or remote-friendly. A short call is the best start.</p>
+      <div class="btns"><a class="btn solid" href="mailto:moutcheuanderson@gmail.com">Email me</a><a class="btn" href="cv-gift-moutcheu-en.pdf" data-cv download>Download my CV</a></div>
     </div>
     <div class="clist">
       <button type="button" id="copy"><span>Email</span><span>moutcheuanderson@gmail.com</span></button>
-      <a href="https://linkedin.com/in/moutcheugift" rel="noopener"><span>LinkedIn</span><span>linkedin.com/in/moutcheugift</span></a>
-      <a href="https://github.com/magss0n" rel="noopener"><span>GitHub</span><span>github.com/magss0n</span></a>
-      <a href="https://gitlab.com/magss0n" rel="noopener"><span>GitLab</span><span>gitlab.com/magss0n</span></a>
+      <a href="https://linkedin.com/in/giftmoutcheu" rel="noopener"><span>LinkedIn</span><span>linkedin.com/in/giftmoutcheu</span></a>
+      <a href="https://github.com/giftmoutcheu" rel="noopener"><span>GitHub</span><span>github.com/giftmoutcheu</span></a>
+      <a href="https://gitlab.com/giftmoutcheu" rel="noopener"><span>GitLab</span><span>gitlab.com/giftmoutcheu</span></a>
       <p id="toast" aria-live="polite"></p>
     </div>
   </div>
-</div></section>
-
-<footer class="site"><div class="wrap">
-  <div class="wire" aria-hidden="true"><span></span><span></span><span></span></div>
-  <div class="fgrid">
-    <div>
-      <p class="fname">Gift Anderson MOUTCHEU</p>
-      <p class="ftag">Software engineer building tools for quantum computing. M.Eng. student at IMT Atlantique, Brest.</p>
-      <span class="fopen"><span class="dot" aria-hidden="true"></span>Open to internships from April 2027</span>
-    </div>
-    <nav aria-label="Footer">
-      <p class="fh">On this page</p>
-      <div class="flinks"><a href="#research">Research</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#more">Certifications</a><a href="#contact">Contact</a></div>
-    </nav>
-    <div>
-      <p class="fh">Elsewhere</p>
-      <div class="flinks"><a href="https://linkedin.com/in/moutcheugift" rel="noopener">LinkedIn</a><a href="https://github.com/magss0n" rel="noopener">GitHub</a><a href="https://gitlab.com/magss0n" rel="noopener">GitLab</a><a href="mailto:moutcheuanderson@gmail.com">Email</a></div>
-    </div>
-  </div>
   <div class="fbottom">
-    <span>© 2026 Gift Anderson MOUTCHEU · Brest, France</span>
-    <a class="top" href="#">Back to top <span aria-hidden="true">↑</span></a>
+    <div class="fid"><p class="fname">Gift Anderson MOUTCHEU</p><span>© 2026 · Brest, France</span></div>
+    <nav aria-label="Footer" class="flinks"><a href="#about">About</a><a href="#research">Research</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#more">Certifications</a></nav>
+    <a class="top" href="#home">Back to top <span aria-hidden="true">↑</span></a>
   </div>
 </div></footer>
 
 <script>
 {
+/* TODO: the u links below are PLACEHOLDERS (guessed repo names) - replace with the real repo URLs before deploying */
 const projects=[
- {t:"Campus assistant with LLM and RAG",m:"Research paper · team of 7 · 2025–2026",b:["Bilingual retrieval-augmented generation system: document indexing, embeddings, semantic search and answer generation, deployed on AWS.","Built following the Nunamaker framework, from theory to implementation to experiment.","Evaluated with 23 participants (Technology Acceptance Model and cognitive walkthrough); written up as an academic paper in English."],k:["Python","LLM","RAG","Embeddings","AWS"],f:"23",fl:"participants in the evaluation"},
- {t:"BookInn, hotel management system",m:"ISNOV SARL internship · May–Aug 2026",b:["Designed every receptionist screen in Figma, then built them in Ionic and Angular from one codebase for web and mobile.","Occupancy and booking calendars in four views (day, week, 15 days, month) with booking-conflict handling, plus a live KPI dashboard.","Filters on four dimensions at once find any booking in under 5 seconds; 16 sprint reviews with no major rework."],k:["Angular","Ionic","TypeScript","Figma","Spring Boot"],f:"6",fl:"modules shipped, covering the full front-desk workflow"},
- {t:"LogiTrack, delivery tracking",m:"Team of 5 · 2025 · deployed",b:["Four Spring Boot microservices (orders, tracking, notifications) behind an API gateway, with an Angular dashboard for live status.","GitHub Actions pipeline: Maven build, JUnit tests, Docker images, automatic deploy to an AWS server with Docker Compose.","Each service redeploys on its own without downtime."],k:["Java","Spring Boot","Angular","Docker","GitHub Actions","AWS"],f:"4",fl:"Spring Boot microservices running in production"},
- {t:"RETAIL CLOUD, invoicing for small businesses",m:"Personal project · 2025 · deployed",b:["SaaS invoicing and payment tracking, modelled in UML before the first line of code.","Spring Boot services with JUnit 5 and Mockito tests on normal, error and edge cases; Angular front end.","Ubuntu server set up from scratch: Docker networks, Nginx reverse proxy, automatic SSL with Certbot, multi-stage GitLab CI/CD with protected secrets."],k:["Spring Boot","Angular","GitLab CI/CD","Nginx","Docker"],f:"3",fl:"Spring Boot services (auth, invoices, clients) on a server I set up myself"}
+ {n:"AcadAI",u:"https://github.com/giftmoutcheu/acadai",t:"Campus assistant with LLM and RAG",m:"Research paper · team of 7 · 2025–2026",b:["Bilingual retrieval-augmented generation system: document indexing, embeddings, semantic search and answer generation, deployed on AWS.","Built following the Nunamaker framework, from theory to implementation to experiment.","Evaluated with 23 participants (Technology Acceptance Model and cognitive walkthrough); written up as an academic paper in English."],k:["Python","LLM","RAG","Embeddings","AWS"],f:"23",fl:"participants in the evaluation"},
+ {n:"LORA",u:"https://github.com/giftmoutcheu/lora",t:"Agricultural cooperative management",m:"Team of 5 · Oct 2025 – Jan 2026 · deployed",b:["Web platform for agricultural cooperative administrators: member management, registration of new cooperatives, and official announcements published as PDFs in French or English, replacing manual paperwork.", "Each PDF announcement can then get audio versions, uploaded or recorded directly in the app, in any language, so members who read less easily still get the information.", "Plant health analysis: a user photographs a plant and uploads the picture; the app calls an external machine learning model API that says whether the plant is sick and lists its probable diseases.", "Angular front end on GitHub Pages and a Spring Boot REST API with MySQL on Render, with role-based access (cooperative admin vs member), CORS set up between the two hosts and secured endpoints."],k:["Angular", "Spring Boot", "MySQL", "Audio recording", "ML model API", "Render", "GitHub Pages"],f:"2",fl:"ways to share each announcement: a PDF in French or English, and audio in any language"},
+ {n:"LogiTrack",u:"https://github.com/giftmoutcheu/logitrack",t:"Delivery tracking",m:"Team of 5 · 2025 · deployed",b:["Four Spring Boot microservices (orders, tracking, notifications) behind an API gateway, with an Angular dashboard for live status.","GitHub Actions pipeline: Maven build, JUnit tests, Docker images, automatic deploy to an AWS server with Docker Compose.","Each service redeploys on its own without downtime."],k:["Java","Spring Boot","Angular","Docker","GitHub Actions","AWS"],f:"4",fl:"Spring Boot microservices running in production"},
+ {n:"RETAIL CLOUD",u:"https://gitlab.com/giftmoutcheu/retail-cloud",t:"Invoicing for small businesses",m:"Personal project · 2025 · deployed",b:["SaaS invoicing and payment tracking, modelled in UML before the first line of code.","Spring Boot services with JUnit 5 and Mockito tests on normal, error and edge cases; Angular front end.","Ubuntu server set up from scratch: Docker networks, Nginx reverse proxy, automatic SSL with Certbot, multi-stage GitLab CI/CD with protected secrets."],k:["Spring Boot","Angular","GitLab CI/CD","Nginx","Docker"],f:"3",fl:"Spring Boot services (auth, invoices, clients) on a server I set up myself"}
 ];
 const skills=[
- ["Quantum Computing","Where I'm heading",["Qiskit","IBM Quantum","Quantum circuits","Grover","Shor","VQE","Runtime assertions"],[]],
- ["Back end","Three deployed projects",["Java","Spring Boot","REST APIs","Microservices","JUnit 5","Mockito","SQL"],["Java","Spring Boot","REST APIs"]],
- ["Front end and mobile","Three internships",["Angular","TypeScript","Ionic","Kotlin Multiplatform","Jetpack Compose","Figma"],["Angular","TypeScript","Figma"]],
- ["DevOps and cloud","From pull request to production",["Docker","Docker Compose","GitHub Actions","GitLab CI/CD","Nginx","AWS","Linux"],["Docker","GitHub Actions","GitLab CI/CD"]],
- ["Data and AI","Research paper, team of 7",["Python","R","Machine learning","LLM","RAG","Empirical evaluation"],["Python"]],
- ["Ways of working","Every team so far",["Scrum","UML","Code review","Go","Technical writing in English"],["Scrum"]]
+ ["Quantum Computing","Where I'm heading",["Qiskit","IBM Quantum","Quantum circuits","Grover","Shor","VQE","Runtime assertions"]],
+ ["Back end","Three deployed projects",["Java","Spring Boot","REST APIs","Microservices","JUnit 5","Mockito","SQL"]],
+ ["Front end and mobile","Three internships",["Angular","TypeScript","Ionic","Kotlin Multiplatform","Jetpack Compose","Figma"]],
+ ["DevOps and cloud","From pull request to production",["Docker","Docker Compose","GitHub Actions","GitLab CI/CD","Nginx","AWS","Linux"]],
+ ["Data and AI","Research paper, team of 7",["Python","R","Machine learning","LLM","RAG","Empirical evaluation"]],
+ ["Methodology","Every team so far",["Scrum","UML","Code review","Technical writing in English"]]
 ];
 const esc=s=>s.replace(/[&<>]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));
-document.getElementById("plist").innerHTML=projects.map(p=>`<article class="proj"><div><h3>${esc(p.t)}</h3><p class="meta">${esc(p.m)}</p><div class="tags">${p.k.map(k=>`<span>${esc(k)}</span>`).join("")}</div></div><ul>${p.b.map(x=>`<li>${esc(x)}</li>`).join("")}</ul><div class="fact"><div class="big">${esc(p.f)}</div><p>${esc(p.fl)}</p></div></article>`).join("");
+/* project title: a link with a redirect icon only when u holds an https URL (repo on GitHub or GitLab) */
+const host=u=>/gitlab\.com/i.test(u)?"GitLab":/github\.com/i.test(u)?"GitHub":"the project page";
+const ptitle=p=>{const t=`<span class="pn">${esc(p.n)}:</span> ${esc(p.t)}`;
+  if(!/^https:\/\//.test(p.u||""))return t;
+  return `<a class="plink" href="${esc(p.u).replace(/"/g,"&quot;")}" target="_blank" rel="noopener noreferrer">${t}<svg class="ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg><span class="vh"> (opens ${host(p.u)} in a new tab)</span></a>`};
+/* skill chip + project tag icons: brand logos are Simple Icons path data (CC0, simple-icons@13.21.0; trademarks belong to their owners), the rest are drawn line icons */
+const ti={
+ "Qiskit":["f","M11.9686 0v.0013C7.7636.0111 3.8602 2.222 1.6966 5.8438-.5206 9.5553-.5677 14.1722 1.5734 17.928c2.0288 3.5587 5.7249 5.821 9.7863 6.0365a6.1732 6.1732 0 001.3664-.005c3.9417-.2393 7.5325-2.4066 9.572-5.8207a11.9785 11.9785 0 001.6939-5.9703 1.3484 1.3484 0 00.008-.1258v-.0342a1.4017 1.4017 0 00-.006-.1104 11.9779 11.9779 0 00-1.4163-5.5598C20.5388 2.5261 16.6048.1057 12.2812.0033c-.08-.0019-.1598-.0013-.2396-.0016C12.019.0015 11.9898 0 11.9686 0zm.008.8395c1.2294.0012 2.0657.2743 2.0657.5136 0 .2398-.857.5483-2.0567.5483-1.1997 0-2.0908-.2911-2.0908-.531 0-.2346.823-.5168 1.9984-.529.0279-.0002.0555-.0018.0834-.002zm2.8741.368a11.2001 11.2001 0 014.9964 2.8353c-1.9678-.7539-4.8296-1.1702-7.6044-1.1992-1.3468 0-2.703.0898-3.9768.2587-.277-.3393-.757-.513-1.2469-.2737-.27.132-.4365.3398-.5178.5704-.8623.1802-1.6528.4022-2.3352.6632a11.1854 11.1854 0 014.916-2.8296c-.0059.0445-.01.09-.01.1379 0 1.2334 2.0224 1.336 2.9137 1.336.8912 0 2.8794-.1198 2.8794-1.336 0-.0569-.0059-.1107-.0143-.163zm-2.608 2.4411c4.789.0599 8.3098 1.1517 9.1259 2.2488.0245.0374.0496.0743.0736.112.07.1219.1071.2434.1071.363 0 .8254-1.7313 1.7052-4.4467 2.2304-1.5337-.2227-3.1837-.3483-4.8083-.363-.5957 0-1.1928.0175-1.7869.0448L8.2666 4.4024c.1364-.1666.2082-.3464.2307-.5246 1.1424-.1443 2.4018-.2292 3.7454-.2292zm-5.6933.5568c.159.3323.4872.5848.946.5738.0456.0028.0912.0028.1369 0l2.0644 3.551c-.9554.0639-1.894.1597-2.7865.2913-2.7422-.5285-4.4367-1.4293-4.4367-2.249 0-.0962.0263-.1932.072-.2904.0497-.0794.1014-.1573.153-.2353.5158-.6194 1.9017-1.2233 3.8509-1.6414zM22.095 7.1838a11.1321 11.1321 0 01.9992 3.3529c-.873-.6681-2.3136-1.2006-4.0417-1.584 1.46-.4478 2.5653-1.0446 3.0425-1.7689zm-20.1695.0315c.4884.7285 1.5982 1.3203 3.0449 1.7612-1.7294.3856-3.1592.9152-4.0297 1.5702.0658-.4965.1638-.993.299-1.4865.176-.6428.4074-1.2586.6858-1.845zM12.277 9.0277c.2927.0031.58.0103.8643.0194-.4443.0189-.8956.0322-1.361.0322a31.6185 31.6185 0 01-.8262-.0208l-.0044-.008a39.8672 39.8672 0 011.3272-.0228zm4.918.3801c3.6492.5526 5.954 1.6152 5.9974 2.5807 0 .0152-.0007.0305-.0007.0458-.0524.9623-2.3803 1.9992-5.943 2.5525-1.0469-.2007-2.1789-.3418-3.3325-.4189L12.38 11.5287l-.9443-1.6357c.109.0023.2182.0072.327.0084 1.8753 0 3.7715-.1718 5.4323-.4935zm-10.374.016c1.1798.2266 2.4668.375 3.7672.4394l1.1575 1.991 1.3102 2.2676a31.8296 31.8296 0 00-.813-.0235c-1.895 0-3.8113.1731-5.4852.4986-3.4614-.535-5.6997-1.5307-5.9126-2.4592a11.1137 11.1137 0 01-.0003-.2637c.2145-.9349 2.522-1.9192 5.9762-2.4501zm16.2693 4.0773a11.1764 11.1764 0 01-.9765 3.2946c-.4665-.7202-1.5352-1.302-2.9364-1.7384 1.679-.3871 3.064-.912 3.9129-1.5562zM.947 13.5205c.852.6529 2.2333 1.1731 3.89 1.5535-1.3891.4357-2.4439 1.009-2.921 1.7023a11.1813 11.1813 0 01-.969-3.2558zm11.2956 1.3658c.4403.0069.8654.0254 1.2831.0485l.0084.0144a39.6667 39.6667 0 01-1.7885.0401 39.3883 39.3883 0 01-1.435-.0421 31.1187 31.1187 0 011.932-.061zm5.0929.5226c2.6122.5393 4.2197 1.4099 4.2308 2.2183 0 .1156-.0357.233-.1034.3503-.0116.0183-.0241.0362-.0358.0545-.4058.6113-1.6971 1.2205-3.5647 1.6596-.1728-.2433-.4515-.4161-.8208-.4196a1.0459 1.0459 0 00-.1544 0l-2.078-3.57c.8675-.07 1.717-.1666 2.5263-.2931zm-10.6667.012c1.6028.2481 3.3467.3868 5.0597.4076.758 0 1.5198-.0228 2.2726-.0673l2.235 3.8875a1.0464 1.0464 0 00-.2005.3858c-1.2744.1865-2.7086.2995-4.2556.2995-4.7015-.0588-8.1788-1.0996-9.0873-2.1725a11.162 11.162 0 01-.1855-.2934c-.0323-.0807-.0497-.1612-.0508-.241.0106-.8 1.6375-1.6662 4.2124-2.2061zm13.2643 4.468c-.062.0623-.123.1254-.1868.1864a11.1477 11.1477 0 01-4.7213 2.6894c.0506-.1196.0797-.2446.0797-.375 0-.5564-.4856-1.0308-1.2513-1.3217a28.8077 28.8077 0 002.295-.2455c.2498.4144.7751.6624 1.3193.4078.3507-.164.5338-.4565.5794-.7658.6904-.164 1.326-.3566 1.886-.5755zm-15.7843.0482c1.5918.6106 3.7654.9958 6.0014 1.139-.7448.2871-1.2155.749-1.2155 1.2965v.017c0 .1298.03.2548.082.3748a11.1695 11.1695 0 01-4.8679-2.8273zm7.8709 1.596c1.3883 0 2.2625.4968 2.2796.8565.0123.2569-.4576.5739-1.2255.7348a11.2018 11.2018 0 01-2.1983-.008c-.7142-.1748-1.135-.4912-1.135-.7267 0-.3426.891-.8566 2.2792-.8566z"],
+ "Java":["s","<path d=\"M5 10h11v4.5a5.5 5.5 0 0 1-5.5 5.5A5.5 5.5 0 0 1 5 14.5z\"/><path d=\"M16 11.5h1.2a2.6 2.6 0 0 1 0 5.2H15.6\"/><path d=\"M8.5 2.5c-1.2 1.2 1.2 2.3 0 3.5M12.5 2.5c-1.2 1.2 1.2 2.3 0 3.5\"/><path d=\"M3.5 22h15\"/>"],
+ "Spring Boot":["f","m23.693 10.7058-4.73-8.1844c-.4094-.7106-1.4166-1.2942-2.2402-1.2942H7.2725c-.819 0-1.8308.5836-2.2402 1.2942L.307 10.7058c-.4095.7106-.4095 1.873 0 2.5837l4.7252 8.189c.4094.7107 1.4166 1.2943 2.2402 1.2943h9.455c.819 0 1.826-.5836 2.2402-1.2942l4.7252-8.189c.4095-.7107.4095-1.8732 0-2.5838zM10.9763 5.7547c0-.5365.4377-.9742.9742-.9742s.9742.4377.9742.9742v5.8217c0 .5366-.4377.9742-.9742.9742s-.9742-.4376-.9742-.9742zm.9742 12.4294c-3.6427 0-6.6077-2.965-6.6077-6.6077.0047-2.0896.993-4.0521 2.6685-5.304a.8657.8657 0 0 1 1.2142.1788.8657.8657 0 0 1-.1788 1.2143c-2.1602 1.6048-2.612 4.6592-1.0072 6.8194 1.6049 2.1603 4.6593 2.612 6.8195 1.0072 1.2378-.9177 1.9673-2.372 1.9673-3.9157a4.8972 4.8972 0 0 0-1.9861-3.925c-.386-.2824-.466-.8284-.1836-1.2143.2824-.386.8283-.466 1.2143-.1835 1.6895 1.2471 2.6826 3.2238 2.6873 5.3228 0 3.6474-2.965 6.6077-6.6077 6.6077z"],
+ "JUnit 5":["f","M11.886 9.769c1.647 0 2.95.436 3.912 1.307.961.872 1.442 2.06 1.442 3.566 0 1.744-.548 3.107-1.643 4.09-1.088.977-2.638 1.465-4.65 1.465-1.826 0-3.26-.294-4.303-.883v-2.38a7.89 7.89 0 002.079.793c.782.186 1.509.28 2.18.28 1.184 0 2.086-.265 2.704-.794.619-.53.928-1.304.928-2.325 0-1.952-1.245-2.929-3.733-2.929-.35 0-.783.038-1.297.112-.514.067-.965.145-1.352.235l-1.174-.693.626-7.98H16.1v2.335H9.919l-.37 4.046c.262-.044.578-.096.95-.156.38-.06.843-.09 1.387-.09zM12 0C5.373 0 0 5.373 0 12a11.998 11.998 0 006.65 10.738v-3.675h.138c.01.004 4.86 2.466 8.021 0 3.163-2.468 1.62-5.785 1.08-6.557-.54-.771-3.317-2.083-5.708-1.851-2.391.231-2.391.308-2.391.308l.617-7.096 7.687-.074V.744A12 12 0 0011.999 0zm4.095.744V3.793l-7.688.074-.617 7.096s0-.077 2.391-.308c2.392-.232 5.169 1.08 5.708 1.851.54.772 2.083 4.089-1.08 6.557-3.16 2.467-8.013.004-8.02 0h-.14v3.675A12 12 0 0012 24c6.628 0 12-5.373 12-12A12.007 12.007 0 0016.35.83c-.085-.03-.17-.059-.255-.086zM6.299 22.556z"],
+ "Angular":["f","M16.712 17.711H7.288l-1.204 2.916L12 24l5.916-3.373-1.204-2.916ZM14.692 0l7.832 16.855.814-12.856L14.692 0ZM9.308 0 .662 3.999l.814 12.856L9.308 0Zm-.405 13.93h6.198L12 6.396 8.903 13.93Z"],
+ "TypeScript":["f","M1.125 0C.502 0 0 .502 0 1.125v21.75C0 23.498.502 24 1.125 24h21.75c.623 0 1.125-.502 1.125-1.125V1.125C24 .502 23.498 0 22.875 0zm17.363 9.75c.612 0 1.154.037 1.627.111a6.38 6.38 0 0 1 1.306.34v2.458a3.95 3.95 0 0 0-.643-.361 5.093 5.093 0 0 0-.717-.26 5.453 5.453 0 0 0-1.426-.2c-.3 0-.573.028-.819.086a2.1 2.1 0 0 0-.623.242c-.17.104-.3.229-.393.374a.888.888 0 0 0-.14.49c0 .196.053.373.156.529.104.156.252.304.443.444s.423.276.696.41c.273.135.582.274.926.416.47.197.892.407 1.266.628.374.222.695.473.963.753.268.279.472.598.614.957.142.359.214.776.214 1.253 0 .657-.125 1.21-.373 1.656a3.033 3.033 0 0 1-1.012 1.085 4.38 4.38 0 0 1-1.487.596c-.566.12-1.163.18-1.79.18a9.916 9.916 0 0 1-1.84-.164 5.544 5.544 0 0 1-1.512-.493v-2.63a5.033 5.033 0 0 0 3.237 1.2c.333 0 .624-.03.872-.09.249-.06.456-.144.623-.25.166-.108.29-.234.373-.38a1.023 1.023 0 0 0-.074-1.089 2.12 2.12 0 0 0-.537-.5 5.597 5.597 0 0 0-.807-.444 27.72 27.72 0 0 0-1.007-.436c-.918-.383-1.602-.852-2.053-1.405-.45-.553-.676-1.222-.676-2.005 0-.614.123-1.141.369-1.582.246-.441.58-.804 1.004-1.089a4.494 4.494 0 0 1 1.47-.629 7.536 7.536 0 0 1 1.77-.201zm-15.113.188h9.563v2.166H9.506v9.646H6.789v-9.646H3.375z"],
+ "Ionic":["f","M22.922 7.027l-.103-.23-.169.188c-.408.464-.928.82-1.505 1.036l-.159.061.066.155a9.745 9.745 0 0 1 .75 3.759c0 5.405-4.397 9.806-9.806 9.806-5.409 0-9.802-4.397-9.802-9.802 0-5.405 4.402-9.806 9.806-9.806 1.467 0 2.883.319 4.2.947l.155.075.066-.155a3.767 3.767 0 0 1 1.106-1.453l.197-.159-.225-.117A11.905 11.905 0 0 0 12.001.001c-6.619 0-12 5.381-12 12s5.381 12 12 12 12-5.381 12-12c0-1.73-.361-3.403-1.078-4.973zM12 6.53A5.476 5.476 0 0 0 6.53 12 5.476 5.476 0 0 0 12 17.47 5.476 5.476 0 0 0 17.47 12 5.479 5.479 0 0 0 12 6.53zm10.345-2.007a2.494 2.494 0 1 1-4.988 0 2.494 2.494 0 0 1 4.988 0z"],
+ "Kotlin Multiplatform":["f","M24 24H0V0h24L12 12Z"],
+ "Jetpack Compose":["f","M12.135.003a2.577 2.577 0 0 0-1.42.344L2.55 5.06a2.577 2.577 0 0 0-.953.967l3.957 2.17a1.765 1.765 0 0 1 .603-.588l4.951-2.86a1.761 1.761 0 0 1 1.76 0l4.951 2.86a1.753 1.753 0 0 1 .526.46l3.921-2.265a2.577 2.577 0 0 0-.816-.744L13.291.347a2.577 2.577 0 0 0-1.152-.34Zm-.145 4.912a1.36 1.36 0 0 0-.68.182L6.36 7.953a1.345 1.345 0 0 0-.454.435l1.92 1.055a1.05 1.05 0 0 1 .31-.275l3.34-1.928a1.054 1.054 0 0 1 1.051 0l3.336 1.928a1.066 1.066 0 0 1 .238.199l.018-.01-.002-.002 1.877-1.08a1.353 1.353 0 0 0-.373-.322l-4.95-2.86a1.357 1.357 0 0 0-.68-.178Zm10.432 1.149-3.92 2.26a1.757 1.757 0 0 1 .2.812v5.715c0 .627-.332 1.21-.88 1.528l-4.95 2.86a1.761 1.761 0 0 1-.64.214v4.524a2.577 2.577 0 0 0 1.059-.313l8.162-4.713a2.577 2.577 0 0 0 1.289-2.23V7.297a2.577 2.577 0 0 0-.318-1.228Zm-20.937.238a2.577 2.577 0 0 0-.227.99v9.43c0 .918.491 1.767 1.293 2.229l8.162 4.713a2.57 2.57 0 0 0 1.225.336v-4.531a1.761 1.761 0 0 1-.833-.235L6.156 16.38a1.765 1.765 0 0 1-.877-1.528V9.136a1.776 1.776 0 0 1 .131-.676Zm16.67 2.223-1.89 1.092a1.058 1.058 0 0 1 .124.46v3.856c0 .378-.2.72-.526.907l-3.336 1.93a1.04 1.04 0 0 1-.295.107v2.17c.152-.027.304-.078.44-.157l4.949-2.859a1.36 1.36 0 0 0 .68-1.18V9.136a1.36 1.36 0 0 0-.147-.607Zm-12.387.13a1.36 1.36 0 0 0-.088.481v5.715a1.36 1.36 0 0 0 .68 1.18l4.95 2.86c.194.112.412.166.627.177v-2.174a1.054 1.054 0 0 1-.46-.123L8.14 14.843a1.054 1.054 0 0 1-.532-.908v-3.853a.99.99 0 0 1 .077-.38l-.034-.013z"],
+ "Figma":["f","M15.852 8.981h-4.588V0h4.588c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.491-4.49 4.491zM12.735 7.51h3.117c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.019-3.019h-3.117V7.51zm0 1.471H8.148c-2.476 0-4.49-2.014-4.49-4.49S5.672 0 8.148 0h4.588v8.981zm-4.587-7.51c-1.665 0-3.019 1.355-3.019 3.019s1.354 3.02 3.019 3.02h3.117V1.471H8.148zm4.587 15.019H8.148c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h4.588v8.98zM8.148 8.981c-1.665 0-3.019 1.355-3.019 3.019s1.355 3.019 3.019 3.019h3.117V8.981H8.148zM8.172 24c-2.489 0-4.515-2.014-4.515-4.49s2.014-4.49 4.49-4.49h4.588v4.441c0 2.503-2.047 4.539-4.563 4.539zm-.024-7.51a3.023 3.023 0 0 0-3.019 3.019c0 1.665 1.365 3.019 3.044 3.019 1.705 0 3.093-1.376 3.093-3.068v-2.97H8.148zm7.704 0h-.098c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h.098c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.49-4.49 4.49zm-.097-7.509c-1.665 0-3.019 1.355-3.019 3.019s1.355 3.019 3.019 3.019h.098c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.019-3.019h-.098z"],
+ "Docker":["f","M13.983 11.078h2.119a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.119a.185.185 0 00-.185.185v1.888c0 .102.083.185.185.185m-2.954-5.43h2.118a.186.186 0 00.186-.186V3.574a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.185m0 2.716h2.118a.187.187 0 00.186-.186V6.29a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.887c0 .102.082.185.185.186m-2.93 0h2.12a.186.186 0 00.184-.186V6.29a.185.185 0 00-.185-.185H8.1a.185.185 0 00-.185.185v1.887c0 .102.083.185.185.186m-2.964 0h2.119a.186.186 0 00.185-.186V6.29a.185.185 0 00-.185-.185H5.136a.186.186 0 00-.186.185v1.887c0 .102.084.185.186.186m5.893 2.715h2.118a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.118a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.185m-2.93 0h2.12a.185.185 0 00.184-.185V9.006a.185.185 0 00-.184-.186h-2.12a.185.185 0 00-.184.185v1.888c0 .102.083.185.185.185m-2.964 0h2.119a.185.185 0 00.185-.185V9.006a.185.185 0 00-.184-.186h-2.12a.186.186 0 00-.186.186v1.887c0 .102.084.185.186.185m-2.92 0h2.12a.185.185 0 00.184-.185V9.006a.185.185 0 00-.184-.186h-2.12a.185.185 0 00-.184.185v1.888c0 .102.082.185.185.185M23.763 9.89c-.065-.051-.672-.51-1.954-.51-.338.001-.676.03-1.01.087-.248-1.7-1.653-2.53-1.716-2.566l-.344-.199-.226.327c-.284.438-.49.922-.612 1.43-.23.97-.09 1.882.403 2.661-.595.332-1.55.413-1.744.42H.751a.751.751 0 00-.75.748 11.376 11.376 0 00.692 4.062c.545 1.428 1.355 2.48 2.41 3.124 1.18.723 3.1 1.137 5.275 1.137.983.003 1.963-.086 2.93-.266a12.248 12.248 0 003.823-1.389c.98-.567 1.86-1.288 2.61-2.136 1.252-1.418 1.998-2.997 2.553-4.4h.221c1.372 0 2.215-.549 2.68-1.009.309-.293.55-.65.707-1.046l.098-.288Z"],
+ "Docker Compose":["f","M13.983 11.078h2.119a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.119a.185.185 0 00-.185.185v1.888c0 .102.083.185.185.185m-2.954-5.43h2.118a.186.186 0 00.186-.186V3.574a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.185m0 2.716h2.118a.187.187 0 00.186-.186V6.29a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.887c0 .102.082.185.185.186m-2.93 0h2.12a.186.186 0 00.184-.186V6.29a.185.185 0 00-.185-.185H8.1a.185.185 0 00-.185.185v1.887c0 .102.083.185.185.186m-2.964 0h2.119a.186.186 0 00.185-.186V6.29a.185.185 0 00-.185-.185H5.136a.186.186 0 00-.186.185v1.887c0 .102.084.185.186.186m5.893 2.715h2.118a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.118a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.185m-2.93 0h2.12a.185.185 0 00.184-.185V9.006a.185.185 0 00-.184-.186h-2.12a.185.185 0 00-.184.185v1.888c0 .102.083.185.185.185m-2.964 0h2.119a.185.185 0 00.185-.185V9.006a.185.185 0 00-.184-.186h-2.12a.186.186 0 00-.186.186v1.887c0 .102.084.185.186.185m-2.92 0h2.12a.185.185 0 00.184-.185V9.006a.185.185 0 00-.184-.186h-2.12a.185.185 0 00-.184.185v1.888c0 .102.082.185.185.185M23.763 9.89c-.065-.051-.672-.51-1.954-.51-.338.001-.676.03-1.01.087-.248-1.7-1.653-2.53-1.716-2.566l-.344-.199-.226.327c-.284.438-.49.922-.612 1.43-.23.97-.09 1.882.403 2.661-.595.332-1.55.413-1.744.42H.751a.751.751 0 00-.75.748 11.376 11.376 0 00.692 4.062c.545 1.428 1.355 2.48 2.41 3.124 1.18.723 3.1 1.137 5.275 1.137.983.003 1.963-.086 2.93-.266a12.248 12.248 0 003.823-1.389c.98-.567 1.86-1.288 2.61-2.136 1.252-1.418 1.998-2.997 2.553-4.4h.221c1.372 0 2.215-.549 2.68-1.009.309-.293.55-.65.707-1.046l.098-.288Z"],
+ "GitHub Actions":["f","M10.984 13.836a.5.5 0 0 1-.353-.146l-.745-.743a.5.5 0 1 1 .706-.708l.392.391 1.181-1.18a.5.5 0 0 1 .708.707l-1.535 1.533a.504.504 0 0 1-.354.146zm9.353-.147l1.534-1.532a.5.5 0 0 0-.707-.707l-1.181 1.18-.392-.391a.5.5 0 1 0-.706.708l.746.743a.497.497 0 0 0 .706-.001zM4.527 7.452l2.557-1.585A1 1 0 0 0 7.09 4.17L4.533 2.56A1 1 0 0 0 3 3.406v3.196a1.001 1.001 0 0 0 1.527.85zm2.03-2.436L4 6.602V3.406l2.557 1.61zM24 12.5c0 1.93-1.57 3.5-3.5 3.5a3.503 3.503 0 0 1-3.46-3h-2.08a3.503 3.503 0 0 1-3.46 3 3.502 3.502 0 0 1-3.46-3h-.558c-.972 0-1.85-.399-2.482-1.042V17c0 1.654 1.346 3 3 3h.04c.244-1.693 1.7-3 3.46-3 1.93 0 3.5 1.57 3.5 3.5S13.43 24 11.5 24a3.502 3.502 0 0 1-3.46-3H8c-2.206 0-4-1.794-4-4V9.899A5.008 5.008 0 0 1 0 5c0-2.757 2.243-5 5-5s5 2.243 5 5a5.005 5.005 0 0 1-4.952 4.998A2.482 2.482 0 0 0 7.482 12h.558c.244-1.693 1.7-3 3.46-3a3.502 3.502 0 0 1 3.46 3h2.08a3.503 3.503 0 0 1 3.46-3c1.93 0 3.5 1.57 3.5 3.5zm-15 8c0 1.378 1.122 2.5 2.5 2.5s2.5-1.122 2.5-2.5-1.122-2.5-2.5-2.5S9 19.122 9 20.5zM5 9c2.206 0 4-1.794 4-4S7.206 1 5 1 1 2.794 1 5s1.794 4 4 4zm9 3.5c0-1.378-1.122-2.5-2.5-2.5S9 11.122 9 12.5s1.122 2.5 2.5 2.5 2.5-1.122 2.5-2.5zm9 0c0-1.378-1.122-2.5-2.5-2.5S18 11.122 18 12.5s1.122 2.5 2.5 2.5 2.5-1.122 2.5-2.5zm-13 8a.5.5 0 1 0 1 0 .5.5 0 0 0-1 0zm2 0a.5.5 0 1 0 1 0 .5.5 0 0 0-1 0zm12 0c0 1.93-1.57 3.5-3.5 3.5a3.503 3.503 0 0 1-3.46-3.002c-.007.001-.013.005-.021.005l-.506.017h-.017a.5.5 0 0 1-.016-.999l.506-.017c.018-.002.035.006.052.007A3.503 3.503 0 0 1 20.5 17c1.93 0 3.5 1.57 3.5 3.5zm-1 0c0-1.378-1.122-2.5-2.5-2.5S18 19.122 18 20.5s1.122 2.5 2.5 2.5 2.5-1.122 2.5-2.5z"],
+ "GitLab CI/CD":["f","m23.6004 9.5927-.0337-.0862L20.3.9814a.851.851 0 0 0-.3362-.405.8748.8748 0 0 0-.9997.0539.8748.8748 0 0 0-.29.4399l-2.2055 6.748H7.5375l-2.2057-6.748a.8573.8573 0 0 0-.29-.4412.8748.8748 0 0 0-.9997-.0537.8585.8585 0 0 0-.3362.4049L.4332 9.5015l-.0325.0862a6.0657 6.0657 0 0 0 2.0119 7.0105l.0113.0087.03.0213 4.976 3.7264 2.462 1.8633 1.4995 1.1321a1.0085 1.0085 0 0 0 1.2197 0l1.4995-1.1321 2.4619-1.8633 5.006-3.7489.0125-.01a6.0682 6.0682 0 0 0 2.0094-7.003z"],
+ "Nginx":["f","M12 0L1.605 6v12L12 24l10.395-6V6L12 0zm6 16.59c0 .705-.646 1.29-1.529 1.29-.631 0-1.351-.255-1.801-.81l-6-7.141v6.66c0 .721-.57 1.29-1.274 1.29H7.32c-.721 0-1.29-.6-1.29-1.29V7.41c0-.705.63-1.29 1.5-1.29.646 0 1.38.255 1.83.81l5.97 7.141V7.41c0-.721.6-1.29 1.29-1.29h.075c.72 0 1.29.6 1.29 1.29v9.18H18z"],
+ "AWS":["f","M6.763 10.036c0 .296.032.535.088.71.064.176.144.368.256.576.04.063.056.127.056.183 0 .08-.048.16-.152.24l-.503.335a.383.383 0 0 1-.208.072c-.08 0-.16-.04-.239-.112a2.47 2.47 0 0 1-.287-.375 6.18 6.18 0 0 1-.248-.471c-.622.734-1.405 1.101-2.347 1.101-.67 0-1.205-.191-1.596-.574-.391-.384-.59-.894-.59-1.533 0-.678.239-1.23.726-1.644.487-.415 1.133-.623 1.955-.623.272 0 .551.024.846.064.296.04.6.104.918.176v-.583c0-.607-.127-1.03-.375-1.277-.255-.248-.686-.367-1.3-.367-.28 0-.568.031-.863.103-.295.072-.583.16-.862.272a2.287 2.287 0 0 1-.28.104.488.488 0 0 1-.127.023c-.112 0-.168-.08-.168-.247v-.391c0-.128.016-.224.056-.28a.597.597 0 0 1 .224-.167c.279-.144.614-.264 1.005-.36a4.84 4.84 0 0 1 1.246-.151c.95 0 1.644.216 2.091.647.439.43.662 1.085.662 1.963v2.586zm-3.24 1.214c.263 0 .534-.048.822-.144.287-.096.543-.271.758-.51.128-.152.224-.32.272-.512.047-.191.08-.423.08-.694v-.335a6.66 6.66 0 0 0-.735-.136 6.02 6.02 0 0 0-.75-.048c-.535 0-.926.104-1.19.32-.263.215-.39.518-.39.917 0 .375.095.655.295.846.191.2.47.296.838.296zm6.41.862c-.144 0-.24-.024-.304-.08-.064-.048-.12-.16-.168-.311L7.586 5.55a1.398 1.398 0 0 1-.072-.32c0-.128.064-.2.191-.2h.783c.151 0 .255.025.31.08.065.048.113.16.16.312l1.342 5.284 1.245-5.284c.04-.16.088-.264.151-.312a.549.549 0 0 1 .32-.08h.638c.152 0 .256.025.32.08.063.048.12.16.151.312l1.261 5.348 1.381-5.348c.048-.16.104-.264.16-.312a.52.52 0 0 1 .311-.08h.743c.127 0 .2.065.2.2 0 .04-.009.08-.017.128a1.137 1.137 0 0 1-.056.2l-1.923 6.17c-.048.16-.104.263-.168.311a.51.51 0 0 1-.303.08h-.687c-.151 0-.255-.024-.32-.08-.063-.056-.119-.16-.15-.32l-1.238-5.148-1.23 5.14c-.04.16-.087.264-.15.32-.065.056-.177.08-.32.08zm10.256.215c-.415 0-.83-.048-1.229-.143-.399-.096-.71-.2-.918-.32-.128-.071-.215-.151-.247-.223a.563.563 0 0 1-.048-.224v-.407c0-.167.064-.247.183-.247.048 0 .096.008.144.024.048.016.12.048.2.08.271.12.566.215.878.279.319.064.63.096.95.096.502 0 .894-.088 1.165-.264a.86.86 0 0 0 .415-.758.777.777 0 0 0-.215-.559c-.144-.151-.416-.287-.807-.415l-1.157-.36c-.583-.183-1.014-.454-1.277-.813a1.902 1.902 0 0 1-.4-1.158c0-.335.073-.63.216-.886.144-.255.335-.479.575-.654.24-.184.51-.32.83-.415.32-.096.655-.136 1.006-.136.175 0 .359.008.535.032.183.024.35.056.518.088.16.04.312.08.455.127.144.048.256.096.336.144a.69.69 0 0 1 .24.2.43.43 0 0 1 .071.263v.375c0 .168-.064.256-.184.256a.83.83 0 0 1-.303-.096 3.652 3.652 0 0 0-1.532-.311c-.455 0-.815.071-1.062.223-.248.152-.375.383-.375.71 0 .224.08.416.24.567.159.152.454.304.877.44l1.134.358c.574.184.99.44 1.237.767.247.327.367.702.367 1.117 0 .343-.072.655-.207.926-.144.272-.336.511-.583.703-.248.2-.543.343-.886.447-.36.111-.734.167-1.142.167zM21.698 16.207c-2.626 1.94-6.442 2.969-9.722 2.969-4.598 0-8.74-1.7-11.87-4.526-.247-.223-.024-.527.272-.351 3.384 1.963 7.559 3.153 11.877 3.153 2.914 0 6.114-.607 9.06-1.852.439-.2.814.287.383.607zM22.792 14.961c-.336-.43-2.22-.207-3.074-.103-.255.032-.295-.192-.063-.36 1.5-1.053 3.967-.75 4.254-.399.287.36-.08 2.826-1.485 4.007-.215.184-.423.088-.327-.151.32-.79 1.03-2.57.695-2.994z"],
+ "Linux":["f","M12.504 0c-.155 0-.315.008-.48.021-4.226.333-3.105 4.807-3.17 6.298-.076 1.092-.3 1.953-1.05 3.02-.885 1.051-2.127 2.75-2.716 4.521-.278.832-.41 1.684-.287 2.489a.424.424 0 00-.11.135c-.26.268-.45.6-.663.839-.199.199-.485.267-.797.4-.313.136-.658.269-.864.68-.09.189-.136.394-.132.602 0 .199.027.4.055.536.058.399.116.728.04.97-.249.68-.28 1.145-.106 1.484.174.334.535.47.94.601.81.2 1.91.135 2.774.6.926.466 1.866.67 2.616.47.526-.116.97-.464 1.208-.946.587-.003 1.23-.269 2.26-.334.699-.058 1.574.267 2.577.2.025.134.063.198.114.333l.003.003c.391.778 1.113 1.132 1.884 1.071.771-.06 1.592-.536 2.257-1.306.631-.765 1.683-1.084 2.378-1.503.348-.199.629-.469.649-.853.023-.4-.2-.811-.714-1.376v-.097l-.003-.003c-.17-.2-.25-.535-.338-.926-.085-.401-.182-.786-.492-1.046h-.003c-.059-.054-.123-.067-.188-.135a.357.357 0 00-.19-.064c.431-1.278.264-2.55-.173-3.694-.533-1.41-1.465-2.638-2.175-3.483-.796-1.005-1.576-1.957-1.56-3.368.026-2.152.236-6.133-3.544-6.139zm.529 3.405h.013c.213 0 .396.062.584.198.19.135.33.332.438.533.105.259.158.459.166.724 0-.02.006-.04.006-.06v.105a.086.086 0 01-.004-.021l-.004-.024a1.807 1.807 0 01-.15.706.953.953 0 01-.213.335.71.71 0 00-.088-.042c-.104-.045-.198-.064-.284-.133a1.312 1.312 0 00-.22-.066c.05-.06.146-.133.183-.198.053-.128.082-.264.088-.402v-.02a1.21 1.21 0 00-.061-.4c-.045-.134-.101-.2-.183-.333-.084-.066-.167-.132-.267-.132h-.016c-.093 0-.176.03-.262.132a.8.8 0 00-.205.334 1.18 1.18 0 00-.09.4v.019c.002.089.008.179.02.267-.193-.067-.438-.135-.607-.202a1.635 1.635 0 01-.018-.2v-.02a1.772 1.772 0 01.15-.768c.082-.22.232-.406.43-.533a.985.985 0 01.594-.2zm-2.962.059h.036c.142 0 .27.048.399.135.146.129.264.288.344.465.09.199.14.4.153.667v.004c.007.134.006.2-.002.266v.08c-.03.007-.056.018-.083.024-.152.055-.274.135-.393.2.012-.09.013-.18.003-.267v-.015c-.012-.133-.04-.2-.082-.333a.613.613 0 00-.166-.267.248.248 0 00-.183-.064h-.021c-.071.006-.13.04-.186.132a.552.552 0 00-.12.27.944.944 0 00-.023.33v.015c.012.135.037.2.08.334.046.134.098.2.166.268.01.009.02.018.034.024-.07.057-.117.07-.176.136a.304.304 0 01-.131.068 2.62 2.62 0 01-.275-.402 1.772 1.772 0 01-.155-.667 1.759 1.759 0 01.08-.668 1.43 1.43 0 01.283-.535c.128-.133.26-.2.418-.2zm1.37 1.706c.332 0 .733.065 1.216.399.293.2.523.269 1.052.468h.003c.255.136.405.266.478.399v-.131a.571.571 0 01.016.47c-.123.31-.516.643-1.063.842v.002c-.268.135-.501.333-.775.465-.276.135-.588.292-1.012.267a1.139 1.139 0 01-.448-.067 3.566 3.566 0 01-.322-.198c-.195-.135-.363-.332-.612-.465v-.005h-.005c-.4-.246-.616-.512-.686-.71-.07-.268-.005-.47.193-.6.224-.135.38-.271.483-.336.104-.074.143-.102.176-.131h.002v-.003c.169-.202.436-.47.839-.601.139-.036.294-.065.466-.065zm2.8 2.142c.358 1.417 1.196 3.475 1.735 4.473.286.534.855 1.659 1.102 3.024.156-.005.33.018.513.064.646-1.671-.546-3.467-1.089-3.966-.22-.2-.232-.335-.123-.335.59.534 1.365 1.572 1.646 2.757.13.535.16 1.104.021 1.67.067.028.135.06.205.067 1.032.534 1.413.938 1.23 1.537v-.043c-.06-.003-.12 0-.18 0h-.016c.151-.467-.182-.825-1.065-1.224-.915-.4-1.646-.336-1.77.465-.008.043-.013.066-.018.135-.068.023-.139.053-.209.064-.43.268-.662.669-.793 1.187-.13.533-.17 1.156-.205 1.869v.003c-.02.334-.17.838-.319 1.35-1.5 1.072-3.58 1.538-5.348.334a2.645 2.645 0 00-.402-.533 1.45 1.45 0 00-.275-.333c.182 0 .338-.03.465-.067a.615.615 0 00.314-.334c.108-.267 0-.697-.345-1.163-.345-.467-.931-.995-1.788-1.521-.63-.4-.986-.87-1.15-1.396-.165-.534-.143-1.085-.015-1.645.245-1.07.873-2.11 1.274-2.763.107-.065.037.135-.408.974-.396.751-1.14 2.497-.122 3.854a8.123 8.123 0 01.647-2.876c.564-1.278 1.743-3.504 1.836-5.268.048.036.217.135.289.202.218.133.38.333.59.465.21.201.477.335.876.335.039.003.075.006.11.006.412 0 .73-.134.997-.268.29-.134.52-.334.74-.4h.005c.467-.135.835-.402 1.044-.7zm2.185 8.958c.037.6.343 1.245.882 1.377.588.134 1.434-.333 1.791-.765l.211-.01c.315-.007.577.01.847.268l.003.003c.208.199.305.53.391.876.085.4.154.78.409 1.066.486.527.645.906.636 1.14l.003-.007v.018l-.003-.012c-.015.262-.185.396-.498.595-.63.401-1.746.712-2.457 1.57-.618.737-1.37 1.14-2.036 1.191-.664.053-1.237-.2-1.574-.898l-.005-.003c-.21-.4-.12-1.025.056-1.69.176-.668.428-1.344.463-1.897.037-.714.076-1.335.195-1.814.12-.465.308-.797.641-.984l.045-.022zm-10.814.049h.01c.053 0 .105.005.157.014.376.055.706.333 1.023.752l.91 1.664.003.003c.243.533.754 1.064 1.189 1.637.434.598.77 1.131.729 1.57v.006c-.057.744-.48 1.148-1.125 1.294-.645.135-1.52.002-2.395-.464-.968-.536-2.118-.469-2.857-.602-.369-.066-.61-.2-.723-.4-.11-.2-.113-.602.123-1.23v-.004l.002-.003c.117-.334.03-.752-.027-1.118-.055-.401-.083-.71.043-.94.16-.334.396-.4.69-.533.294-.135.64-.202.915-.47h.002v-.002c.256-.268.445-.601.668-.838.19-.201.38-.336.663-.336zm7.159-9.074c-.435.201-.945.535-1.488.535-.542 0-.97-.267-1.28-.466-.154-.134-.28-.268-.373-.335-.164-.134-.144-.333-.074-.333.109.016.129.134.199.2.096.066.215.2.36.333.292.2.68.467 1.167.467.485 0 1.053-.267 1.398-.466.195-.135.445-.334.648-.467.156-.136.149-.267.279-.267.128.016.034.134-.147.332a8.097 8.097 0 01-.69.468zm-1.082-1.583V5.64c-.006-.02.013-.042.029-.05.074-.043.18-.027.26.004.063 0 .16.067.15.135-.006.049-.085.066-.135.066-.055 0-.092-.043-.141-.068-.052-.018-.146-.008-.163-.065zm-.551 0c-.02.058-.113.049-.166.066-.047.025-.086.068-.14.068-.05 0-.13-.02-.136-.068-.01-.066.088-.133.15-.133.08-.031.184-.047.259-.005.019.009.036.03.03.05v.02h.003z"],
+ "Python":["f","M14.25.18l.9.2.73.26.59.3.45.32.34.34.25.34.16.33.1.3.04.26.02.2-.01.13V8.5l-.05.63-.13.55-.21.46-.26.38-.3.31-.33.25-.35.19-.35.14-.33.1-.3.07-.26.04-.21.02H8.77l-.69.05-.59.14-.5.22-.41.27-.33.32-.27.35-.2.36-.15.37-.1.35-.07.32-.04.27-.02.21v3.06H3.17l-.21-.03-.28-.07-.32-.12-.35-.18-.36-.26-.36-.36-.35-.46-.32-.59-.28-.73-.21-.88-.14-1.05-.05-1.23.06-1.22.16-1.04.24-.87.32-.71.36-.57.4-.44.42-.33.42-.24.4-.16.36-.1.32-.05.24-.01h.16l.06.01h8.16v-.83H6.18l-.01-2.75-.02-.37.05-.34.11-.31.17-.28.25-.26.31-.23.38-.2.44-.18.51-.15.58-.12.64-.1.71-.06.77-.04.84-.02 1.27.05zm-6.3 1.98l-.23.33-.08.41.08.41.23.34.33.22.41.09.41-.09.33-.22.23-.34.08-.41-.08-.41-.23-.33-.33-.22-.41-.09-.41.09zm13.09 3.95l.28.06.32.12.35.18.36.27.36.35.35.47.32.59.28.73.21.88.14 1.04.05 1.23-.06 1.23-.16 1.04-.24.86-.32.71-.36.57-.4.45-.42.33-.42.24-.4.16-.36.09-.32.05-.24.02-.16-.01h-8.22v.82h5.84l.01 2.76.02.36-.05.34-.11.31-.17.29-.25.25-.31.24-.38.2-.44.17-.51.15-.58.13-.64.09-.71.07-.77.04-.84.01-1.27-.04-1.07-.14-.9-.2-.73-.25-.59-.3-.45-.33-.34-.34-.25-.34-.16-.33-.1-.3-.04-.25-.02-.2.01-.13v-5.34l.05-.64.13-.54.21-.46.26-.38.3-.32.33-.24.35-.2.35-.14.33-.1.3-.06.26-.04.21-.02.13-.01h5.84l.69-.05.59-.14.5-.21.41-.28.33-.32.27-.35.2-.36.15-.36.1-.35.07-.32.04-.28.02-.21V6.07h2.09l.14.01zm-6.47 14.25l-.23.33-.08.41.08.41.23.33.33.23.41.08.41-.08.33-.23.23-.33.08-.41-.08-.41-.23-.33-.33-.23-.41-.08-.41.08z"],
+ "R":["f","M12 2.746c-6.627 0-12 3.599-12 8.037 0 3.897 4.144 7.144 9.64 7.88V16.26c-2.924-.915-4.925-2.755-4.925-4.877 0-3.035 4.084-5.494 9.12-5.494 5.038 0 8.757 1.683 8.757 5.494 0 1.976-.999 3.379-2.662 4.272.09.066.174.128.258.216.169.149.25.363.372.544 2.128-1.45 3.44-3.437 3.44-5.631 0-4.44-5.373-8.038-12-8.038zm-2.111 4.99v13.516l4.093-.002-.002-5.291h1.1c.225 0 .321.066.549.25.272.22.715.982.715.982l2.164 4.063 4.627-.002-2.864-4.826s-.086-.193-.265-.383a2.22 2.22 0 00-.582-.416c-.422-.214-1.149-.434-1.149-.434s3.578-.264 3.578-3.826c0-3.562-3.744-3.63-3.744-3.63zm4.127 2.93l2.478.002s1.149-.062 1.149 1.127c0 1.165-1.149 1.17-1.149 1.17h-2.478zm1.754 6.119c-.494.049-1.012.079-1.54.088v1.807a16.622 16.622 0 002.37-.473l-.471-.891s-.108-.183-.248-.394c-.039-.054-.08-.098-.111-.137z"],
+ "IBM Quantum":["s","<circle cx=\"12\" cy=\"12\" r=\"1.6\" fill=\"currentColor\" stroke=\"none\"/><ellipse cx=\"12\" cy=\"12\" rx=\"10\" ry=\"4\"/><ellipse cx=\"12\" cy=\"12\" rx=\"10\" ry=\"4\" transform=\"rotate(60 12 12)\"/><ellipse cx=\"12\" cy=\"12\" rx=\"10\" ry=\"4\" transform=\"rotate(-60 12 12)\"/>"],
+ "Quantum circuits":["s","<path d=\"M2 8h5M13 8h9M2 16h20\"/><rect x=\"7\" y=\"5\" width=\"6\" height=\"6\" rx=\"1\"/><path d=\"M17 8v5.8\"/><circle cx=\"17\" cy=\"16\" r=\"2.2\"/>"],
+ "Grover":["s","<circle cx=\"10.5\" cy=\"10.5\" r=\"6\"/><path d=\"m15 15 6 6\"/>"],
+ "Shor":["s","<circle cx=\"12\" cy=\"4\" r=\"2\"/><circle cx=\"6\" cy=\"18\" r=\"2\"/><circle cx=\"18\" cy=\"18\" r=\"2\"/><path d=\"M11 6 7 16M13 6l4 10\"/>"],
+ "VQE":["s","<path d=\"M3 5c3 0 4 14 9 14s6-8 9-8\"/><circle cx=\"12\" cy=\"19\" r=\"1.4\" fill=\"currentColor\" stroke=\"none\"/>"],
+ "Runtime assertions":["s","<circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"m8 12 3 3 5-6\"/>"],
+ "REST APIs":["s","<path d=\"M8 4C6 4 6 5.5 6 7.5S5 11 3.5 12C5 13 6 14 6 16.5S6 20 8 20M16 4c2 0 2 1.5 2 3.5s1 3.5 2.5 4.5C19 13 18 14 18 16.5S18 20 16 20\"/>"],
+ "Microservices":["s","<rect x=\"3\" y=\"3\" width=\"7\" height=\"7\" rx=\"1.5\"/><rect x=\"14\" y=\"3\" width=\"7\" height=\"7\" rx=\"1.5\"/><rect x=\"3\" y=\"14\" width=\"7\" height=\"7\" rx=\"1.5\"/><rect x=\"14\" y=\"14\" width=\"7\" height=\"7\" rx=\"1.5\"/>"],
+ "Mockito":["s","<rect x=\"8\" y=\"8\" width=\"13\" height=\"13\" rx=\"2\"/><path d=\"M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3\"/>"],
+ "SQL":["s","<ellipse cx=\"12\" cy=\"5\" rx=\"8\" ry=\"3\"/><path d=\"M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3\"/>"],
+ "Machine learning":["s","<circle cx=\"5\" cy=\"6\" r=\"2\"/><circle cx=\"5\" cy=\"18\" r=\"2\"/><circle cx=\"12\" cy=\"12\" r=\"2\"/><circle cx=\"19\" cy=\"12\" r=\"2\"/><path d=\"m6.5 7.5 4 3M6.5 16.5l4-3M14 12h3\"/>"],
+ "LLM":["s","<path d=\"M4 5h16v11H9l-5 4z\"/><path d=\"M8.5 9.5h7M8.5 12.5h4\"/>"],
+ "RAG":["s","<path d=\"M13 21H6V3h8l4 4v5\"/><path d=\"M14 3v4h4\"/><circle cx=\"17\" cy=\"17\" r=\"3\"/><path d=\"m19.2 19.2 2.3 2.3\"/>"],
+ "Empirical evaluation":["s","<path d=\"M4 20h16M7 16v-5M12 16V6M17 16v-8\"/>"],
+ "Scrum":["s","<path d=\"M20 12a8 8 0 1 1-2.3-5.7\"/><path d=\"M20 4v5h-5\"/>"],
+ "UML":["s","<rect x=\"3\" y=\"3\" width=\"8\" height=\"7\" rx=\"1\"/><path d=\"M3 6.5h8\"/><rect x=\"13\" y=\"14\" width=\"8\" height=\"7\" rx=\"1\"/><path d=\"M13 17.5h8M7 10v7h6\"/>"],
+ "Code review":["s","<path d=\"M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z\"/><circle cx=\"12\" cy=\"12\" r=\"3\"/>"],
+ "Technical writing in English":["s","<path d=\"M4 20h4L19 9l-4-4L4 16z\"/><path d=\"m13.5 6.5 4 4\"/>"],
+ "Embeddings":["s","<path d=\"M4 20 19 6M4 20l15-4M4 20 8 5\"/><circle cx=\"4\" cy=\"20\" r=\"1.5\" fill=\"currentColor\" stroke=\"none\"/>"],
+ "MySQL":["s","<ellipse cx=\"12\" cy=\"5\" rx=\"8\" ry=\"3\"/><path d=\"M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3\"/>"],
+ "Audio recording":["s","<rect x=\"9\" y=\"2.5\" width=\"6\" height=\"11\" rx=\"3\"/><path d=\"M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21M8.5 21h7\"/>"],
+ "ML model API":["s","<rect x=\"6\" y=\"6\" width=\"12\" height=\"12\" rx=\"2\"/><path d=\"M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4\"/><circle cx=\"12\" cy=\"12\" r=\"2\"/>"],
+ "Render":["f","M18.263.007c-3.121-.147-5.744 2.109-6.192 5.082-.018.138-.045.272-.067.405-.696 3.703-3.936 6.507-7.827 6.507-1.388 0-2.691-.356-3.825-.979a.2024.2024 0 0 0-.302.178V24H12v-8.999c0-1.656 1.338-3 2.987-3h2.988c3.382 0 6.103-2.817 5.97-6.244-.12-3.084-2.61-5.603-5.682-5.75"],
+ "GitHub Pages":["s","<rect x=\"3\" y=\"4\" width=\"18\" height=\"16\" rx=\"2\"/><path d=\"M3 9h18M6.5 6.5h.01M9.5 6.5h.01\"/>"]
+};
+const tico=k=>{const v=ti[k];if(!v)return"";return v[0]==="f"?`<svg class="ti" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="${v[1]}"/></svg>`:`<svg class="ti" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${v[1]}</svg>`};
+document.getElementById("plist").innerHTML=projects.map(p=>`<article class="proj"><div><h3>${ptitle(p)}</h3><p class="meta">${esc(p.m)}</p><div class="tags">${p.k.map(k=>`<span>${tico(k)}${esc(k)}</span>`).join("")}</div></div><ul>${p.b.map(x=>`<li>${esc(x)}</li>`).join("")}</ul><div class="fact"><div class="big">${esc(p.f)}</div><p>${esc(p.fl)}</p></div></article>`).join("");
 const ic=[
  '<circle cx="12" cy="12" r="1.8" fill="currentColor" stroke="none"/><ellipse cx="12" cy="12" rx="10" ry="4"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(-60 12 12)"/>',
  '<rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01" stroke-width="3"/><path d="M11 7.5h6M11 16.5h6"/>',
@@ -567,67 +664,33 @@ const ic=[
  '<path d="M5 6l7 6M5 18l7-6M19 6l-7 6M19 18l-7-6"/><circle cx="5" cy="6" r="2.2" fill="var(--bg)"/><circle cx="5" cy="18" r="2.2" fill="var(--bg)"/><circle cx="19" cy="6" r="2.2" fill="var(--bg)"/><circle cx="19" cy="18" r="2.2" fill="var(--bg)"/><circle cx="12" cy="12" r="2.6" fill="currentColor"/>',
  '<circle cx="8" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M2.5 20c.6-3.4 2.9-5.5 5.5-5.5s4.9 2.1 5.5 5.5M14 15c.9-.6 1.9-.9 3-.9 2.3 0 4.1 1.8 4.6 4.9"/>'
 ];
-document.getElementById("slist").innerHTML=skills.map((s,i)=>`<div class="sk${i===0?" hot":""}"><div class="sk-h"><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">${ic[i]}</svg></span><h3>${esc(s[0])}</h3></div><p class="sk-n">${esc(s[1])}</p><div class="tags">${s[2].map(k=>`<span${s[3].includes(k)?' class="core"':""}>${esc(k)}</span>`).join("")}</div></div>`).join("");
+document.getElementById("slist").innerHTML=skills.map((s,i)=>`<div class="sk${i===0?" hot":""}"><div class="sk-h"><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">${ic[i]}</svg></span><h3>${esc(s[0])}</h3></div><p class="sk-n">${esc(s[1])}</p><div class="tags">${s[2].map(k=>`<span>${tico(k)}${esc(k)}</span>`).join("")}</div></div>`).join("");
 
 const toast=document.getElementById("toast");
 document.getElementById("copy").addEventListener("click",()=>{
   const v="moutcheuanderson@gmail.com";
-  const done=()=>{toast.textContent="Email address copied.";setTimeout(()=>toast.textContent="",2500)};
+  const done=()=>{toast.textContent=T("Email address copied.");setTimeout(()=>toast.textContent="",2500)};
   try{navigator.clipboard.writeText(v).then(done,()=>{toast.textContent=v})}catch(e){toast.textContent=v}
 });
 
-const gates=[
- {x:.13,w:0,l:"UI",y:"2024"},
- {x:.20,w:1,l:"KMP",y:"2025"},
- {x:.40,w:2,l:"Microservices",two:["Micro","services"],y:"2025"},
- {x:.48,w:0,l:"RAG",y:"2025"},
- {x:.58,w:3,l:"PMS",y:"2026"},
- {x:.68,w:1,l:"Qiskit",y:"2026"}
-];
-const cx=[{x:.27,c:0,t:2},{x:.53,c:1,t:3},{x:.62,c:2,t:0}];
-const s=document.getElementById("circ");
-const fig=document.getElementById("fig");
-const reduce=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-let anim=0;
-const draw=()=>{
-  const W=fig.clientWidth,H=fig.clientHeight;
-  if(!W||!H)return;
-  const small=W<520,n=4,L=small?30:48,R=W-(small?34:56),top=small?26:36,bot=small?18:30;
-  const gy=i=>top+i*(H-top-bot)/(n-1);
-  const X=f=>L+f*(R-L);
-  const gh=small?26:34,fs=small?12:15;
-  let o="";
-  for(let i=0;i<n;i++){o+=`<line x1="${L}" x2="${R}" y1="${gy(i)}" y2="${gy(i)}" stroke="currentColor" stroke-width="1.5"/>`;
-   if(!small)o+=`<text x="${L-10}" y="${gy(i)+5}" text-anchor="end" font-size="14" fill="currentColor" font-family="Inter,sans-serif">|0⟩</text>`}
-  for(const c of (small?[]:cx)){const x=X(c.x),a=gy(c.c),b=gy(c.t);
-   o+=`<line x1="${x}" x2="${x}" y1="${a}" y2="${b}" stroke="currentColor" stroke-width="1.5"/><circle cx="${x}" cy="${a}" r="5" fill="currentColor"/><circle cx="${x}" cy="${b}" r="${small?8:10}" fill="var(--field)" stroke="currentColor" stroke-width="1.5"/><line x1="${x}" x2="${x}" y1="${b-(small?8:10)}" y2="${b+(small?8:10)}" stroke="currentColor" stroke-width="1.5"/><line x1="${x-(small?8:10)}" x2="${x+(small?8:10)}" y1="${b}" y2="${b}" stroke="currentColor" stroke-width="1.5"/>`}
-  for(const g of gates){const x=X(g.x),y=gy(g.w);let hh=gh;
-   if(g.two){const f2=fs,h2=f2*2.3+10;hh=h2;const w=Math.max(...g.two.map(t=>t.length))*f2*.6+14;
-    o+=`<rect x="${x-w/2}" y="${y-h2/2}" width="${w}" height="${h2}" rx="5" fill="var(--fink)"/><text text-anchor="middle" font-size="${f2}" font-weight="700" fill="#121214" font-family="Space Grotesk,sans-serif"><tspan x="${x}" y="${y-f2*.22}">${g.two[0]}</tspan><tspan x="${x}" y="${y+f2*.92}">${g.two[1]}</tspan></text>`;
-   }else{const lab=small&&g.l==="Qiskit"?"Q":g.l,w=Math.max(gh,lab.length*fs*.62+16);
-    o+=`<rect x="${x-w/2}" y="${y-gh/2}" width="${w}" height="${gh}" rx="5" fill="var(--fink)"/><text x="${x}" y="${y+fs*.36}" text-anchor="middle" font-size="${fs}" font-weight="700" fill="#121214" font-family="Space Grotesk,sans-serif">${lab}</text>`;}
-   if(!small)o+=`<text x="${x}" y="${y-hh/2-8}" text-anchor="middle" font-size="13" fill="currentColor" opacity=".75" font-family="Inter,sans-serif">${g.y}</text>`}
-  const px=X(.82),pw=small?30:44;
-  o+=`<rect x="${px-pw/2}" y="${gy(0)-gh/2-6}" width="${pw}" height="${gy(n-1)-gy(0)+gh+12}" rx="8" fill="var(--field)" stroke="currentColor" stroke-width="2" stroke-dasharray="6 5"/>`;
-  o+=`<text x="${px}" y="${gy(0)-gh/2-14}" text-anchor="middle" font-size="${small?12:14}" font-weight="700" fill="currentColor" font-family="Space Grotesk,sans-serif">assert</text>`;
-  for(let i=0;i<n;i++){const y=gy(i);o+=`<circle cx="${px}" cy="${y}" r="${small?4:5}" fill="none" stroke="currentColor" stroke-width="1.5"/>`}
-  const mw=small?22:30,mh=small?18:24;
-  for(let i=0;i<n;i++){const y=gy(i),mx=R;
-   o+=`<rect x="${mx-mw/2}" y="${y-mh/2}" width="${mw}" height="${mh}" rx="4" fill="var(--field)" stroke="currentColor" stroke-width="1.5"/><path d="M${mx-mw*.32} ${y+mh*.22} A ${mw*.32} ${mw*.32} 0 0 1 ${mx+mw*.32} ${y+mh*.22}" fill="none" stroke="currentColor" stroke-width="1.5"/><line x1="${mx}" y1="${y+mh*.22}" x2="${mx+mw*.22}" y2="${y-mh*.3}" stroke="currentColor" stroke-width="1.5"/>`}
-  o+=`<circle id="tok" r="${small?5:6}" cx="${L}" cy="${gy(0)}" fill="currentColor" opacity="${reduce?0:1}"/>`;
-  s.innerHTML=o;
-  cancelAnimationFrame(anim);
-  if(reduce)return;
-  const tok=s.querySelector("#tok");let t0=null;
-  const step=ts=>{if(t0===null)t0=ts;const p=((ts-t0)/7000)%1,wire=Math.floor(((ts-t0)/7000))%n;tok.setAttribute("cx",L+p*(R-L-mw/2));tok.setAttribute("cy",gy(wire));anim=requestAnimationFrame(step)};
-  anim=requestAnimationFrame(step);
-};
-const ro=new ResizeObserver(draw);ro.observe(fig);
+if(window.matchMedia("(prefers-reduced-motion: reduce)").matches){document.querySelectorAll(".orbit").forEach(o=>{if(o.pauseAnimations)o.pauseAnimations()})}
+else{
+  /* portrait parallax: pointer moves the layers at different depths (mouse only), scroll drifts the orbit and kets */
+  const pt=document.querySelector(".portrait"),hero=document.querySelector(".hero");
+  let mx=0,my=0,queued=false;
+  const apply=()=>{queued=false;pt.style.setProperty("--mx",mx.toFixed(3));pt.style.setProperty("--my",my.toFixed(3));pt.style.setProperty("--sy",Math.min(scrollY,400).toFixed(0))};
+  const queue=()=>{if(!queued){queued=true;requestAnimationFrame(apply)}};
+  if(window.matchMedia("(hover: hover) and (pointer: fine)").matches){
+    hero.addEventListener("pointermove",e=>{const r=pt.getBoundingClientRect(),c=v=>Math.max(-1,Math.min(1,v));mx=c((e.clientX-(r.left+r.width/2))/(r.width*.9));my=c((e.clientY-(r.top+r.height/2))/(r.height*.9));queue()});
+    hero.addEventListener("pointerleave",()=>{mx=0;my=0;queue()});
+  }
+  window.addEventListener("scroll",()=>{if(scrollY<900)queue()},{passive:true});
+}
 }
 </script>
 <script>
 {
-  const els=document.querySelectorAll('h2.ket,.about-h');
+  const els=document.querySelectorAll('h2.ket');
   if('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
     document.documentElement.classList.add('js-anim');
     const io=new IntersectionObserver(entries=>{for(const e of entries){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}},{threshold:.25});
@@ -653,6 +716,57 @@ const ro=new ResizeObserver(draw);ro.observe(fig);
   window.addEventListener('scroll',()=>{if(!ticking){ticking=true;requestAnimationFrame(update)}},{passive:true});
   window.addEventListener('resize',update);
   update();
+}
+</script>
+<script>
+{
+  const root=document.documentElement,tb=document.querySelector('.theme'),mq=window.matchMedia('(prefers-color-scheme: dark)');
+  const isDark=()=>root.dataset.theme?root.dataset.theme==='dark':mq.matches;
+  const label=()=>tb.setAttribute('aria-label',T(isDark()?'Switch to light mode':'Switch to dark mode'));
+  tb.addEventListener('click',()=>{const t=isDark()?'light':'dark';root.dataset.theme=t;try{localStorage.setItem('theme',t)}catch(e){}label()});
+  mq.addEventListener('change',label);label();
+  const nav=document.querySelector('nav[aria-label=Sections]'),btn=nav.querySelector('.burger');
+  const set=o=>{nav.classList.toggle('open',o);btn.setAttribute('aria-expanded',o);btn.setAttribute('aria-label',T(o?'Close menu':'Open menu'))};
+  btn.addEventListener('click',()=>set(!nav.classList.contains('open')));
+  nav.querySelectorAll('.links a').forEach(a=>a.addEventListener('click',()=>set(false)));
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&nav.classList.contains('open')){set(false);btn.focus()}});
+  document.addEventListener('click',e=>{if(!nav.contains(e.target))set(false)});
+}
+</script>
+<script>
+window.FR={"About":"À propos","Research":"Recherche","Projects":"Projets","Experience":"Expérience","Skills":"Compétences","I am":"Je suis","Software engineering student at":"En école d’ingénieurs à l’",". I build production software and currently research how to debug":", en génie logiciel, je développe des logiciels en production et je mène actuellement des recherches sur le débogage des","quantum programs":"programmes quantiques","Download my CV":"Télécharger mon CV","about-me":"à-propos","Who I am, beyond the CV.":"Qui je suis, au-delà du CV.","I'm a software engineer who likes to understand a system":"Mon métier, c’est le logiciel : j’aime comprendre un système","end to end":"de bout en bout",", from the first sketch to the server it runs on.":", de la première esquisse jusqu’au serveur sur lequel il tourne.","I care about how things look as much as how they work. On BookInn I designed every receptionist screen in Figma before building it in Angular; for RETAIL CLOUD I set up the Ubuntu server, Nginx and the CI/CD pipeline myself. I pick things up fast: under two weeks to get productive with Kotlin Multiplatform at ORION.":"J’accorde autant d’importance à l’apparence d’un produit qu’à son fonctionnement. Sur BookInn, j’ai conçu chaque écran de la réception dans Figma avant de le développer en Angular ; pour RETAIL CLOUD, j’ai moi-même configuré le serveur Ubuntu, Nginx et le pipeline CI/CD. J’apprends vite : il m’a fallu moins de deux semaines pour prendre en main Kotlin Multiplatform chez ORION.","Away from the keyboard, I train in Nanbudo (green belt), play electric guitar, do voice acting, and read history and science fiction. I speak French and English, and I'm learning German.":"Loin du clavier, je pratique le Nanbudo (ceinture verte), je joue de la guitare électrique, je fais du doublage vocal, et je lis des livres d’histoire et de science-fiction. Je parle français et anglais, et j’apprends l’allemand.","At a glance":"En bref","Studying":"Études","M.Eng., IMT Atlantique, Brest":"Diplôme d’ingénieur, IMT Atlantique, Brest","Researching":"Recherche","Runtime assertions for quantum programs":"Assertions à l’exécution pour programmes quantiques","Strongest in":"Points forts","Languages":"Langues","French, English, German (learning)":"Français, anglais, allemand (en apprentissage)","Open to a 4–5 month internship from April 2027, in quantum or software engineering":"Disponible pour un stage de 4 à 5 mois à partir d’avril 2027, en informatique quantique ou en génie logiciel","Get in touch":"Me contacter","research":"recherche","IMT Atlantique · research paper · since October 2026":"IMT Atlantique · article de recherche · depuis octobre 2026","Debugging Quantum Software Using Runtime Assertions":"Déboguer le logiciel quantique avec des assertions à l’exécution","In progress":"En cours","Measuring a quantum state changes it, so bugs can't be found by inspecting it. SWAP-based assertions check it mid-run, to detect and locate bugs.":"Mesurer un état quantique le modifie : on ne peut donc pas trouver les bugs en l’inspectant. Les assertions à base de SWAP le vérifient en cours d’exécution, pour détecter et localiser les bugs.","dynamic assertion":"assertion dynamique","The program is split into two parts, P1 and P2. Between them, we check that a qubit":"Le programme est découpé en deux parties, P1 et P2. Entre les deux, on vérifie qu’un qubit","is in the expected state |c⟩, while an ancilla qubit is prepared in that state and forwarded to P2. This way, the quantum execution goes on unaltered. The checked qubit reads 0 when its state was right; more than 5% non-zero results over many shots flags a bug rather than noise.":"est dans l’état attendu |c⟩, tandis qu’un qubit auxiliaire (ancilla) est préparé dans cet état puis transmis à P2. Ainsi, l’exécution quantique se poursuit sans être altérée. Le qubit vérifié donne 0 quand son état était correct ; plus de 5 % de résultats non nuls sur de nombreuses exécutions (shots) signalent un bug plutôt que du bruit.","Review":"Revue","Done":"Terminée","State-of-the-art quantum assertions: statistical, dynamic and SWAP-based precise runtime assertions.":"État de l’art des assertions quantiques : assertions statistiques, dynamiques, et assertions précises à l’exécution à base de SWAP.","Apply":"Application","Under way":"En cours","SWAP-based assertions inserted into common quantum algorithms in Qiskit, building on hardware-friendly dynamic assertions.":"Assertions à base de SWAP insérées dans des algorithmes quantiques courants avec Qiskit, en s’appuyant sur des assertions dynamiques adaptées au matériel.","Evaluate":"Évaluation","Next":"À venir","Inject faults, then measure detection on the noisy IBM Aer simulator, and on real IBM hardware if time permits.":"Injecter des fautes, puis mesurer la détection sur le simulateur bruité IBM Aer, et sur du vrai matériel IBM si le temps le permet.","Removed gates":"Portes supprimées","Wrong gates (X for Z)":"Mauvaises portes (X au lieu de Z)","Reordered instructions":"Instructions réordonnées","Builds on:":"S’appuie sur :","Huang and Martonosi, ISCA 2019":"Huang et Martonosi, ISCA 2019","Liu, Byrd and Zhou, ASPLOS 2020":"Liu, Byrd et Zhou, ASPLOS 2020","Liu and Zhou, HPCA 2021":"Liu et Zhou, HPCA 2021","projects":"projets","Research and systems I built and deployed end to end.":"Recherche et systèmes que j’ai conçus et déployés de bout en bout.","Campus assistant with LLM and RAG":"Assistant de campus avec LLM et RAG","(opens GitHub in a new tab)":"(ouvre GitHub dans un nouvel onglet)","(opens GitLab in a new tab)":"(ouvre GitLab dans un nouvel onglet)","(opens the project page in a new tab)":"(ouvre la page du projet dans un nouvel onglet)","Research paper · team of 7 · 2025–2026":"Article de recherche · équipe de 7 · 2025–2026","Bilingual retrieval-augmented generation system: document indexing, embeddings, semantic search and answer generation, deployed on AWS.":"Système bilingue de génération augmentée par récupération (RAG) : indexation de documents, embeddings, recherche sémantique et génération de réponses, déployé sur AWS.","Built following the Nunamaker framework, from theory to implementation to experiment.":"Construit selon le cadre méthodologique de Nunamaker, de la théorie à l’implémentation puis à l’expérimentation.","Evaluated with 23 participants (Technology Acceptance Model and cognitive walkthrough); written up as an academic paper in English.":"Évalué avec 23 participants (Technology Acceptance Model et cognitive walkthrough) ; rédigé sous forme d’article académique en anglais.","participants in the evaluation":"participants à l’évaluation","Agricultural cooperative management":"Gestion de coopératives agricoles","Team of 5 · Oct 2025 – Jan 2026 · deployed":"Équipe de 5 · oct. 2025 – janv. 2026 · déployé","Audio recording":"Enregistrement audio","ML model API":"API de modèle de ML","Web platform for agricultural cooperative administrators: member management, registration of new cooperatives, and official announcements published as PDFs in French or English, replacing manual paperwork.":"Plateforme web pour les administrateurs de coopératives agricoles : gestion des membres, enregistrement de nouvelles coopératives et annonces officielles publiées en PDF, en français ou en anglais, en remplacement des démarches sur papier.","Each PDF announcement can then get audio versions, uploaded or recorded directly in the app, in any language, so members who read less easily still get the information.":"Chaque annonce PDF peut ensuite recevoir des versions audio, importées ou enregistrées directement dans l’application, dans n’importe quelle langue, pour que les membres qui lisent moins facilement aient tout de même l’information.","Plant health analysis: a user photographs a plant and uploads the picture; the app calls an external machine learning model API that says whether the plant is sick and lists its probable diseases.":"Analyse de la santé des plantes : un utilisateur photographie une plante et importe la photo ; l’application appelle l’API d’un modèle de machine learning externe, qui indique si la plante est malade et liste ses maladies probables.","Angular front end on GitHub Pages and a Spring Boot REST API with MySQL on Render, with role-based access (cooperative admin vs member), CORS set up between the two hosts and secured endpoints.":"Front end Angular sur GitHub Pages et API REST Spring Boot avec MySQL sur Render, avec contrôle d’accès par rôle (administrateur de coopérative ou membre), CORS configuré entre les deux hébergeurs et endpoints sécurisés.","ways to share each announcement: a PDF in French or English, and audio in any language":"façons de partager chaque annonce : un PDF en français ou en anglais, et de l’audio dans n’importe quelle langue","Delivery tracking":"Suivi de livraisons","Team of 5 · 2025 · deployed":"Équipe de 5 · 2025 · déployé","Four Spring Boot microservices (orders, tracking, notifications) behind an API gateway, with an Angular dashboard for live status.":"Quatre microservices Spring Boot (commandes, suivi, notifications) derrière une passerelle API, avec un tableau de bord Angular pour le statut en temps réel.","GitHub Actions pipeline: Maven build, JUnit tests, Docker images, automatic deploy to an AWS server with Docker Compose.":"Pipeline GitHub Actions : build Maven, tests JUnit, images Docker, déploiement automatique sur un serveur AWS avec Docker Compose.","Each service redeploys on its own without downtime.":"Chaque service se redéploie indépendamment, sans interruption.","Spring Boot microservices running in production":"microservices Spring Boot en production","Invoicing for small businesses":"Facturation pour petites entreprises","Personal project · 2025 · deployed":"Projet personnel · 2025 · déployé","SaaS invoicing and payment tracking, modelled in UML before the first line of code.":"Facturation et suivi des paiements en SaaS, modélisés en UML avant la première ligne de code.","Spring Boot services with JUnit 5 and Mockito tests on normal, error and edge cases; Angular front end.":"Services Spring Boot testés avec JUnit 5 et Mockito sur les cas nominaux, d’erreur et limites ; front end Angular.","Ubuntu server set up from scratch: Docker networks, Nginx reverse proxy, automatic SSL with Certbot, multi-stage GitLab CI/CD with protected secrets.":"Serveur Ubuntu configuré de zéro : réseaux Docker, reverse proxy Nginx, SSL automatique avec Certbot, CI/CD GitLab multi-étapes avec secrets protégés.","Spring Boot services (auth, invoices, clients) on a server I set up myself":"services Spring Boot (authentification, factures, clients) sur un serveur que j’ai moi-même configuré","experience":"expérience","education":"formation","Three internships shipping real products, two engineering degrees.":"Trois stages qui ont abouti à de vrais produits, deux diplômes d’ingénieur.","Internships":"Stages","May–Aug":"mai–août","4 months":"4 mois","3 months":"3 mois","Jun–Aug":"juin–août","Frontend developer and UI designer":"Développement frontend et design UI","BookInn hotel management system: designed the receptionist's screens in Figma, built them in Ionic and Angular, and added Spring Boot endpoints. Scrum, with weekly reviews alongside the product owner.":"Système de gestion hôtelière BookInn : conception des écrans de la réception dans Figma, développement en Ionic et Angular, et ajout d’endpoints Spring Boot. Scrum, avec des revues hebdomadaires aux côtés du product owner.","modules shipped":"modules livrés","sprint reviews":"revues de sprint","Mobile developer":"Développement mobile","Kotlin Multiplatform app running on Android, desktop and web from one codebase, built with Jetpack Compose and Material 3, with code reviews and testing.":"Application Kotlin Multiplatform fonctionnant sur Android, desktop et web à partir d’une seule base de code, construite avec Jetpack Compose et Material 3, avec revues de code et tests.","platforms":"plateformes","weeks to learn the stack":"semaines pour apprendre la stack","UI designer and frontend developer":"Design UI et développement frontend","Point-of-sale app built from scratch in a team of three: needs analysis for customer and admin users, Figma mock-ups, then the Angular front end. Approved by the company head at the final demo.":"Application de point de vente créée de zéro en équipe de trois : analyse des besoins des clients et des administrateurs, maquettes Figma, puis front end Angular. Validée par le dirigeant de l’entreprise lors de la démo finale.","late sprints":"sprint en retard","frames designed":"frames Figma conçues","Education":"Formation","to 2028":"à 2028","to 2026":"à 2026","Double degree":"Double diplôme","Reliability of distributed systems, concurrent programming in Go, high-performance computing, research methods, and a team project for a partner company.":"Fiabilité des systèmes distribués, programmation concurrente en Go, calcul haute performance, méthodes de recherche, et un projet d’équipe pour une entreprise partenaire.","Distributed systems":"Systèmes distribués","Software engineering and UML, testing and quality, machine learning, statistics, operations research, cloud and virtualisation.":"Génie logiciel et UML, tests et qualité, machine learning, statistiques, recherche opérationnelle, cloud et virtualisation.","Software engineering":"Génie logiciel","Operations research":"Recherche opérationnelle","skills":"compétences","Strongest in Java, Spring Boot and Angular; growing fast in quantum.":"Points forts : Java, Spring Boot et Angular ; en progression rapide en quantique.","Quantum Computing":"Informatique quantique","Where I'm heading":"Là où je me dirige","Quantum circuits":"Circuits quantiques","Runtime assertions":"Assertions à l’exécution","Three deployed projects":"Trois projets déployés","REST APIs":"API REST","Front end and mobile":"Front end et mobile","Three internships":"Trois stages","DevOps and cloud":"DevOps et cloud","From pull request to production":"De la pull request à la production","Data and AI":"Données et IA","Research paper, team of 7":"Article de recherche, équipe de 7","Empirical evaluation":"Évaluation empirique","Methodology":"Méthodologie","Every team so far":"Dans chaque équipe jusqu’ici","Code review":"Revue de code","Technical writing in English":"Rédaction technique en anglais","languages":"langues","Credentials, the languages I work in, and life outside code.":"Certifications, les langues dans lesquelles je travaille, et la vie en dehors du code.","Python Essentials 1 and 2":"Python Essentials 1 et 2","English proficiency test · ETS":"Test de niveau d’anglais · ETS","French":"Français","Native":"Langue maternelle","English":"Anglais","Fluent, TOEIC 930/990":"Courant, TOEIC 930/990","German":"Allemand","Beginner, learning at IMT Atlantique":"Niveau débutant, en apprentissage à l’IMT Atlantique","Beyond the code":"Au-delà du code","Nanbudo: Green belt":"Nanbudo : ceinture verte","Electric guitar":"Guitare électrique","History":"Histoire","Science fiction":"Science-fiction","Voice acting":"Doublage vocal","Let's talk about April 2027":"Parlons d’avril 2027","I'm looking for a 4–5 month internship in quantum software or software engineering, in France or remote-friendly. A short call is the best start.":"Je recherche un stage de 4 à 5 mois en logiciel quantique ou en génie logiciel, en France ou dans une entreprise ouverte au télétravail. Un court appel est le meilleur point de départ.","Email me":"M’écrire","Email":"E-mail","Back to top":"Haut de page","Open menu":"Ouvrir le menu","Close menu":"Fermer le menu","Switch to dark mode":"Passer en mode sombre","Switch to light mode":"Passer en mode clair","Portrait of Gift Anderson MOUTCHEU, arms crossed, wearing glasses and a patterned sweater vest":"Portrait de Gift Anderson MOUTCHEU, bras croisés, avec des lunettes et un pull sans manches à motifs","Dynamic assertion for an expected state c between program parts P1 and P2. On Q2, the inverse gate G-inverse is applied; on the ancilla, gate G prepares the expected state. The two wires then cross: the ancilla goes on into P2, and the result of G-inverse on Q2 is measured, reading 0 when its state was as expected.":"Assertion dynamique pour un état attendu c entre les parties P1 et P2 du programme. Sur Q2, la porte inverse G-inverse est appliquée ; sur l’ancilla, la porte G prépare l’état attendu. Les deux fils se croisent ensuite : l’ancilla continue dans P2, et le résultat de G-inverse sur Q2 est mesuré ; il vaut 0 quand l’état était celui attendu.","ISNOV website (opens in a new tab)":"Site d’ISNOV (s’ouvre dans un nouvel onglet)","ISNOV website":"Site d’ISNOV","ORION website (opens in a new tab)":"Site d’ORION (s’ouvre dans un nouvel onglet)","ORION website":"Site d’ORION","IMT Atlantique website (opens in a new tab)":"Site de l’IMT Atlantique (s’ouvre dans un nouvel onglet)","IMT Atlantique website":"Site de l’IMT Atlantique","Saint Jean Ingénieur website (opens in a new tab)":"Site de Saint Jean Ingénieur (s’ouvre dans un nouvel onglet)","Saint Jean Ingénieur website":"Site de Saint Jean Ingénieur","5 of 5":"5 sur 5","4 of 5":"4 sur 5","1 of 5":"1 sur 5","Footer":"Pied de page","Email address copied.":"Adresse e-mail copiée.","Gift Anderson MOUTCHEU, software engineer building tools for quantum computing. M.Eng. student at IMT Atlantique.":"Gift Anderson MOUTCHEU : génie logiciel et outils pour l’informatique quantique. Diplôme d’ingénieur en cours à l’IMT Atlantique.","I'm a Master of Engineering (M.Eng.) student with specialty software and distributed systems at IMT Atlantique in Brest, as a double degree after four years of computer science at Saint Jean Ingénieur. Along the way I've done three internships, and each one shipped a real product: a point-of-sale app, a Kotlin Multiplatform app, and the BookInn hotel management system.":"Je prépare un diplôme d’ingénieur, spécialité logiciel et systèmes distribués, à l’IMT Atlantique, à Brest, en double diplôme après quatre années d’informatique à Saint Jean Ingénieur. En chemin, j’ai effectué trois stages, et chacun a abouti à un vrai produit : une application de point de vente, une application Kotlin Multiplatform et le système de gestion hôtelière BookInn.","Quantum computing is where I'm heading. My research at IMT Atlantique asks a simple question: how do you find a bug in a program you can't look inside without breaking it? I followed the IBM Qiskit Global Summer School during the summer holidays of 2026, and I'd like my internship to be in quantum software.":"L’informatique quantique, c’est là que je me dirige. Ma recherche à l’IMT Atlantique pose une question simple : comment trouver un bug dans un programme qu’on ne peut pas observer sans le casser ? J’ai suivi la Qiskit Global Summer School d’IBM pendant les vacances d’été 2026, et j’aimerais effectuer mon stage dans le logiciel quantique.","M.Eng: Software Engineering in Distributed Systems":"Diplôme d’ingénieur : Ingénierie logicielle des systèmes distribués","M.Eng: Computer Science and Information Systems":"Diplôme d’ingénieur : Informatique et systèmes d’information"};
+{
+  /* EN/FR switch: English stays in the HTML; French comes from FR, keyed by the English text */
+  const root=document.documentElement,btn=document.querySelector('.lang'),meta=document.querySelector('meta[name=description]');
+  const orig=new WeakMap(),key=s=>s.replace(/\s+/g,' ').trim(),en={title:document.title,desc:meta.content};
+  for(const k of Object.keys(FR)){const n=key(k);if(n!==k&&!(n in FR))FR[n]=FR[k]}
+  const isDark=()=>root.dataset.theme?root.dataset.theme==='dark':matchMedia('(prefers-color-scheme: dark)').matches;
+  const apply=l=>{
+    const fr=l==='fr';
+    root.lang=fr?'fr':'en';
+    const w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);let n;
+    while(n=w.nextNode()){
+      const p=n.parentElement;if(!p||p.closest('script,style,.lang'))continue;
+      if(!orig.has(n))orig.set(n,n.nodeValue);
+      const o=orig.get(n),t=fr&&FR[key(o)];
+      if(!t){n.nodeValue=o;if(fr&&/\s\S+\s\S+\s/.test(o)&&/\b(the|and|with|for|of|to|in|is|my|I)\b/.test(o))console.warn('No French translation for:',key(o));continue}
+      n.nodeValue=o.match(/^\s*/)[0]+t+(t.endsWith('’')?'':o.match(/\s*$/)[0]);
+    }
+    document.querySelectorAll('[aria-label],[alt],[title]').forEach(e=>{
+      if(e.closest('.lang,.theme,.burger'))return;
+      for(const a of ['aria-label','alt','title']){
+        if(!e.hasAttribute(a))continue;
+        const d='data-en-'+a;if(!e.hasAttribute(d))e.setAttribute(d,e.getAttribute(a));
+        const o=e.getAttribute(d);e.setAttribute(a,fr&&FR[o]||o);
+      }
+    });
+    document.querySelector('.theme').setAttribute('aria-label',T(isDark()?'Switch to light mode':'Switch to dark mode'));
+    document.querySelector('.burger').setAttribute('aria-label',T(document.querySelector('nav[aria-label]').classList.contains('open')?'Close menu':'Open menu'));
+    document.querySelectorAll('a[data-cv]').forEach(a=>a.setAttribute('href',fr?'cv-gift-moutcheu-fr.pdf':'cv-gift-moutcheu-en.pdf'));document.title=fr&&FR[en.title]||en.title;meta.content=fr?FR[en.desc]:en.desc;
+    btn.textContent=fr?'EN':'FR';btn.setAttribute('lang',fr?'en':'fr');btn.setAttribute('aria-label',fr?'Switch to English':'Passer en français');
+  };
+  btn.addEventListener('click',()=>{const l=root.lang==='fr'?'en':'fr';apply(l);try{localStorage.setItem('lang',l)}catch(e){}});
+  apply(root.lang==='fr'?'fr':'en');
 }
 </script>
 </body>
